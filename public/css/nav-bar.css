@@ -101,19 +101,16 @@ hr {
 .option {
     background-color: #f7f7f7;
     width: 16.5%;
-    height: 3px;
+    height: 300px;
     line-height: 35px;
     padding: 10px;
     border-radius: 5px;
     display: none;
+    position: absolute;
 }
+
 .option li:hover {
     background-color: #e0e0e0;
     border-radius: 5px;
     padding-left: 10px;
 }
-
-/* const toggleDisplay = target => target.style.display =
-  (target.style.display == 'none') ?
-    'block' :
-    'none' */
