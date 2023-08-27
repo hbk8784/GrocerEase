@@ -16,8 +16,9 @@
        <header class="nav-bar">
        @include('nav-bar')
        </header>
-         <main class="hero-img-container">
+         <main >
            @include('hero-img')
+           @include("browse-by-category")
          </main>
     </div>
 
