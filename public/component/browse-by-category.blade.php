@@ -12,12 +12,12 @@
     <p><a href="">Coffee and Teas</a></p>
   </div>
   <div>
-    <img src="{{asset('image/bread.png')}}" alt="">
-    <p><a href="">Food Cupboard</a></p>
+    <img src="{{asset('image/snack.png')}}" alt="">
+    <p><a href="">Snack</a></p>
   </div>
   <div>
-    <img src="{{asset('image/crab.png')}}" alt="">
-    <p><a href="">Frozen Seafoods</a></p>
+    <img src="{{asset('image/beverage.png')}}" alt="">
+    <p><a href="">Beverages</a></p>
   </div>
   <div>
     <img src="{{asset('image/fruits.png')}}" alt="">
@@ -28,11 +28,11 @@
     <p><a href="">Milk & Dairies</a></p>
   </div>
   <div>
-    <img src="{{asset('image/petfood.png')}}" alt="">
-    <p><a href="">Pet Foods</a></p>
+    <img src="{{asset('image/beauty.png')}}" alt="">
+    <p><a href="">Beauty & Hygiene</a></p>
   </div>
   <div>
-    <img src="{{asset('image/meat.png')}}" alt="">
-    <p><a href="">Raw Meats</a></p>
+    <img src="{{asset('image/household.png')}}" alt="">
+    <p><a href="">Cleaning & Household</a></p>
   </div>
 </section>
