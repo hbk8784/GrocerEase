@@ -19,7 +19,7 @@
          <main >
            @include('hero-img')
            @include("browse-by-category")
-           @include("featured")
+           @include("best")
          </main>
     </div>
 

@@ -1,12 +1,15 @@
 let sandwi_category = document.getElementById("sandwi-category");
 let option = document.getElementById("option");
 
-function show_hide() {
-    if (option.style.display === "none") {
-        option.style.display = "block";
-    } else {
-        option.style.display = "none";
-    }
+function show() {
+    option.style.display = "block";
 }
 
-sandwi_category.addEventListener("click", show_hide);
+function hide() {
+    option.style.display = "none";
+}
+
+sandwi_category.addEventListener("mouseover", show);
+sandwi_category.addEventListener("mouseout", hide);
+option.addEventListener("mouseover", show);
+option.addEventListener("mouseout", hide);

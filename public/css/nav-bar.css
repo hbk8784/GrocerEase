@@ -32,6 +32,7 @@
     width: 300px;
     height: 40px;
     padding: 10px;
+    border-left: 1px solid black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -44,6 +45,7 @@
     border: none;
     background-color: #e0e0e0;
     cursor: pointer;
+    color: black;
 }
 .support {
     /* background-color: green; */
@@ -76,11 +78,11 @@ hr {
 }
 .nav2-container {
     width: 90%;
-    margin: auto;
+    margin: auto auto 0 auto;
     padding: 10px;
 }
 .sandwi-category button {
-    background-color: rgba(250, 181, 40, 255);
+    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     border: none;
     width: 210px;
     height: 40px;
@@ -88,7 +90,9 @@ hr {
     border-radius: 5px;
     cursor: pointer;
 }
-
+.sandwi-category {
+    margin-bottom: 0;
+}
 .nav2-group {
     width: 40%;
     display: flex;
@@ -99,6 +103,7 @@ hr {
     margin-left: 15px;
 }
 .option {
+    margin-top: 0;
     background-color: #f7f7f7;
     width: 16.5%;
     height: 300px;
@@ -107,10 +112,11 @@ hr {
     border-radius: 5px;
     display: none;
     position: absolute;
+    top: 166px;
 }
 
 .option li:hover {
-    background-color: #e0e0e0;
+    background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
     border-radius: 5px;
     padding-left: 10px;
 }

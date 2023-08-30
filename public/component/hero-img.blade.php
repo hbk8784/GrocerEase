@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/hero-img.css')}}">
 
-<div class="hero-img" style="background-image: url('{{ asset('background.jpeg')}}');">
+<div class="hero-img" >
 
     <section class="ad-fit">
 
@@ -22,3 +22,4 @@
 
 </div>
 
+{{-- style="background-image: url('{{ asset('background.jpeg')}}');" --}}
