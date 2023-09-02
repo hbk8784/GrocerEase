@@ -1,16 +1,12 @@
 <link rel="stylesheet" href="{{asset('css/browse-by-category.css')}}">
 
-<h3>Browse by Category</h3>
+<h3 class="brows-by-cat-h3">Browse by Category</h3>
 <section class="browse-by-category-container">
   <div>
     <img src="{{asset('image/sweets.png')}}" alt="sweets">
     <p><a href="">Sweets</a></p>
   </div>
 
-  <div>
-    <img src="{{asset('image/coffee.png')}}" alt="">
-    <p><a href="">Coffee and Teas</a></p>
-  </div>
   <div>
     <img src="{{asset('image/snack.png')}}" alt="">
     <p><a href="">Snack</a></p>

@@ -1,0 +1,38 @@
+.footer-2-container {
+    width: 90%;
+    margin: auto auto 50px auto;
+    display: flex;
+    justify-content: space-between;
+    line-height: 35px;
+}
+.footer-2-container .footer-2-desc {
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    align-items: center;
+}
+.footer-1-option p {
+    font-size: small;
+    color: rgb(0, 0, 0, 0.5);
+}
+.footer-2-container .footer-2-desc-1 {
+    width: 200px;
+}
+.footer-2-container .footer-2-desc-5 {
+    width: 300px;
+}
+.footer-2-container h4 {
+    white-space: nowrap;
+}
+.footer-2-phn {
+    display: flex;
+    gap: 5px;
+}
+.footer-2-add {
+    display: flex;
+    gap: 5px;
+}
+.footer-2-email {
+    display: flex;
+    gap: 5px;
+}

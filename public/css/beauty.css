@@ -1,0 +1,29 @@
+.beauty-container {
+    width: 90%;
+    margin: auto auto 50px auto;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.b-hero-img {
+    background-color: #f1f1f1;
+    border: 1px solid rgb(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+}
+.b-options {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+.b-options div {
+    background-color: #f7f7f7;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

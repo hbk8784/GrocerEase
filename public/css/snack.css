@@ -1,0 +1,25 @@
+.snack-container {
+    width: 80%;
+    margin: 10px auto 20px auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 30px 10px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: white;
+}
+.snack-container div {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.snack-h3 {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+}
+.snack-container div a {
+    color: black;
+}

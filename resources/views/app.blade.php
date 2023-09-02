@@ -16,11 +16,27 @@
        <header class="nav-bar">
        @include('nav-bar')
        </header>
-         <main >
+         <main>
            @include('hero-img')
            @include("browse-by-category")
            @include("best")
+           @include("fruits-vegetable")
+
+           <div class="dark" style="margin-bottom: 30px">
+            @include("snack")
+            @include("beverage")
+           </div>
+
+           @include("beauty")
+           @include("kitchen")
+           @include("cleaning")
          </main>
+
+         <footer>
+            @include("footer-1")
+            @include("footer-2")
+         </footer>
+
     </div>
 
 </body>
