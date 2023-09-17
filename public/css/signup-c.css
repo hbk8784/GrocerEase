@@ -1,0 +1,77 @@
+.signup-container{
+    width:40rem;
+    height: 100vh;
+    background-color: #f7f7f7;
+    margin: 50px auto 100px auto;
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(0, 0, 0, 0.1);
+}
+.signup-container form{
+    padding: 20px;
+    /* line-height: 2rem; */
+}
+.signup-container input{
+    display: block;
+
+
+    margin: 5px auto 5px auto;
+}
+
+.signup-container .input-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.title{
+    margin: 30px auto;
+    text-align: center;
+}
+.name-container{
+    width: 100%;
+    margin-bottom: 2rem;
+    /* background-color: red; */
+}
+.name-container input{
+    width: 16rem;
+}
+input{
+    border: 1px solid rgb(0, 0, 0, 0.1);
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.gender-container{
+    /* background-color: blue; */
+    width: 100%;
+  justify-content: space-between;
+}
+.radio-gender{
+    width: 10rem;
+    display: flex;
+    gap: 1rem;
+    /* background-color: red; */
+    padding: 0.5rem;
+    border: none;
+}
+.address input{
+    width: 35rem;
+}
+.signup-submit-btn{
+    text-align: center;
+}
+.signup-submit-btn button{
+    margin-top: 2rem;
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: #FAB528;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+}
+.email-phone input{
+    width: 16rem;
+}
+.dob-container input{
+    width: 16rem;
+}

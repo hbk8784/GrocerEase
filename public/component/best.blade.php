@@ -12,7 +12,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -24,7 +24,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -36,7 +36,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -48,7 +48,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -60,7 +60,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -72,7 +72,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -84,7 +84,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -96,7 +96,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -108,7 +108,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -120,7 +120,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -132,7 +132,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -144,7 +144,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -156,7 +156,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -168,7 +168,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -180,7 +180,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -192,7 +192,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -204,7 +204,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -216,7 +216,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -228,7 +228,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>
@@ -240,7 +240,7 @@
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
-                <input type="number" name="qty" id="qty" size="10">
+                <input type="number" name="qty" id="qty" style="width:50px">
                 <a href=""><button>Add</button></a>
 
             </form>

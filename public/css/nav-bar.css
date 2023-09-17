@@ -11,8 +11,8 @@
 }
 .catagory-container {
     background-color: #f7f7f7;
-    width: 200px;
-    height: 40px;
+    width: 40%;
+    height: 2.5rem;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -20,7 +20,7 @@
     border-bottom-left-radius: 5px;
 }
 .catagory {
-    width: 200px;
+    width: 100%;
     border: none;
     background-color: #f7f7f7;
     cursor: pointer;
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #e0e0e0;
-    width: 300px;
+    width: 70%;
     height: 40px;
     padding: 10px;
     border-left: 1px solid black;
@@ -82,7 +82,7 @@ hr {
     padding: 10px;
 }
 .sandwi-category button {
-    background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+    background-color: #FAB528;
     border: none;
     width: 210px;
     height: 40px;
