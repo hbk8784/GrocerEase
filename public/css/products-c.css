@@ -1,0 +1,28 @@
+.products-main-container{
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+.products-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+}
+.products-hr{
+    rotate: 90 deg;
+}
+.current-page-main-container{
+    display: flex;
+    align-items: center;
+}
+.current-page-container{
+    width: 60%;
+    margin: auto;
+    font-size: 2rem;
+    color: red;
+}
+.product-detail{
+    display: flex;
+    justify-content: space-between;
+}

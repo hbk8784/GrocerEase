@@ -15,21 +15,22 @@ i {
     text-align: center;
     cursor: pointer;
 }
-.best-seller-container .products-container {
+.products-container {
     max-width: 100%;
     display: flex;
-    gap: 39px;
-    overflow: hidden;
+    gap: 15px;
     overflow-x: scroll;
     scroll-behavior: smooth;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     border: 1px solid rgb(0, 0, 0, 0.3);
     padding: 10px;
-    overflow-y: hidden;
     overflow-x: hidden;
 }
--webkit-scrollbar {
+.best-seller-container{
+    overflow-x: scroll;
+}
+::-webkit-scrollbar {
     display: none;
 }
 .products-container .products {
@@ -52,4 +53,19 @@ form button {
     color: white;
     border-radius: 5px;
     padding: 5px 10px;
+}
+
+@media(max-width: 1100px){
+
+    .products-container{
+      overflow-x: scroll;
+      gap: 0.8rem
+    }
+    #left{
+        display: none;
+    }
+    #right{
+        display: none;
+    }
+
 }

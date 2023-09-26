@@ -1,5 +1,5 @@
 .kitchen-container {
-    width: 80%;
+    width: 90%;
     margin: auto auto 50px auto;
     display: flex;
     justify-content: space-around;
@@ -14,4 +14,18 @@
     text-align: center;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1100px) {
+
+   .kitchen-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+   }
+
+   .kitchen-container img{
+    max-width: 100%;
+    max-height: 100%;
+   }
 }

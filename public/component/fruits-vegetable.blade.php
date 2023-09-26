@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="{{asset('css/fruits-vegetable.css')}}">
+<link rel="stylesheet" href="{{ asset('css/fruits-vegetable.css') }}">
 
 <h3 class="fruit-veg-h3">Fruits & Vegetable</h3>
 <section class="fruits-vegetable-container"> <!-- main container -->
 
     <div class="f-v-hero-img"> <!-- hero image container -->
-       <img src="https://picsum.photos/700/500" alt="">
-       <p><a href="">Seasonal Fruits and Vegetable</a></p>
+        <img src="https://picsum.photos/700/500" alt="">
+        <p><a href="">Seasonal Fruits and Vegetable</a></p>
     </div>
 
     <div class="f-v-options"> <!-- categroy container -->

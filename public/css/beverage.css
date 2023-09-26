@@ -22,3 +22,18 @@
 .beverage-container div a {
     color: black;
 }
+
+
+@media(max-width: 1100px){
+    .beverage-container{
+        width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+    .beverage-container img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

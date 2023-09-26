@@ -1,18 +1,25 @@
 .browse-by-category-container {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
     width: 90%;
+    max-height: 15rem;
     margin: auto;
     margin-bottom: 60px;
     border: 1px solid rgb(0, 0, 0, 0.3);
-    padding: 10px;
+    padding: 0 0.1rem;
 }
-.browse-by-category-container img {
+.browse-by-category-wrapper{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+}
+.browse-by-category-wrapper img {
     width: 70px;
     height: 70px;
 }
-.browse-by-category-container div {
+.browse-by-category-wrapper div {
+    margin: auto;
+    text-align: center;
     width: 150px;
     height: 200px;
     /* background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
@@ -20,13 +27,14 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid rgb(0, 0, 0, 0.3);
+
 }
-.browse-by-category-container div:hover {
+.browse-by-category-wrapper div:hover {
     background-image: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
     cursor: pointer;
     box-shadow: 5px 5px 30px 1px black;
 }
-.browse-by-category-container div p {
+.browse-by-category-wrapper div p {
     margin-top: 30px;
 }
 h3 {
@@ -34,6 +42,37 @@ h3 {
     width: 90%;
     margin: auto;
 }
-.browse-by-category-container div a {
+.browse-by-category-wrapper div a {
     color: black;
+}
+
+@media(max-width: 1100px) {
+    .browse-by-category-wrapper{
+        width: 100%;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .browse-by-category-wrapper div {
+        width: 100%;
+        height: 9rem;
+    }
+
+    .browse-by-category-wrapper img{
+        width: 5rem;
+        height: 3.5rem;
+    }
+    .browse-by-category-wrapper div p{
+        font-size: 0.8rem;
+        margin: 0;
+
+    }
+    h3{
+        background-image:linear-gradient(to right, #d4e4b4 , #a4c44a, #9cc344) ;
+        color: rgb(0, 0, 0);
+    }
 }
