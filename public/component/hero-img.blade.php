@@ -5,7 +5,7 @@
     <section class="ad-fit">
 
         <div class="ad1">
-            <img src="{{ asset('ad1.jpeg') }}" alt="juice-box">
+            <img src="{{ asset('ad1.jpg') }}" alt="juice-box">
             <div class="ad1-desc">
                 <button>Shop Now</button>
             </div><br>

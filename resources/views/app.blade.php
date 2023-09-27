@@ -34,13 +34,11 @@
             @include('cleaning')
         </main>
 
-        <footer>
-            {{-- @include("footer-1")
-            @include("footer-2") --}}
+        <footer style="background-color: rgb(0, 0, 0); color: rgb(255, 255, 255)">
+            @include('footer-1')
+            @include('footer-2')
         </footer>
-
     </div>
-
 </body>
 
 </html>
