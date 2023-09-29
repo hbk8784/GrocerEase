@@ -31,6 +31,7 @@
 .name-container{
     width: 100%;
     margin-bottom: 2rem;
+    display: block;
     /* background-color: red; */
 }
 .name-container input{
@@ -74,4 +75,23 @@ input{
 }
 .dob-container input{
     width: 16rem;
+}
+
+@media(max-width: 1100px){
+    .signup-container{
+        width:90%;
+        height: 63rem;
+    }
+
+    .signup-container .input-container{
+        display: block;
+    }
+    .address input{
+        max-width: 100%;
+    }
+    .signup-container input{
+        margin-bottom: 1rem;
+        margin-left: 0;
+        width: 100%;
+    }
 }

@@ -61,4 +61,7 @@
     .footer-2-container .footer-2-desc-5 {
         max-width: 100%;
     }
+    .footer-2-desc-5{
+         grid-column: 1/span 2;
+    }
 }

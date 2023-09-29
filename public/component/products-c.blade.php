@@ -14,8 +14,8 @@
     <aside class="sidemenu-container">
         <h3>Categories</h3>
         <ul>
-            <li><a href="">Sweets</a>
-            </li>
+            <li><a href="">All</a></li>
+            <li><a href="">Sweets</a></li>
             <li><a href="">Snack</a></li>
             <li><a href="">Beverages</a></li>
             <li><a href="">Fruits & Vegetable</a></li>
@@ -23,7 +23,7 @@
             <li><a href="">Beauty & Hygiene</a></li>
             <li><a href="">Cleaning & Household</a></li>
         </ul><br>
-        <h3>Company</h3>
+        <h3>Brand</h3>
         <select name="" id="">
             <option value="">ALL</option>
             <option value="">Random</option>
@@ -41,85 +41,117 @@
         <br>
     </aside>
     <hr class="products-hr">
+
     <section class="products-container">
+
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
         <div class="products-img-detail">
             <img src="https://picsum.photos/200/200" alt="">
-            <div class="product-detail">
-                <p>Name</p>
-                <p>Price</p>
-            </div>
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
+        </div>
+
+        <div class="products-img-detail">
+            <img src="https://picsum.photos/200/200" alt="">
+
+            <p>Name</p>
+            <p>Quantity</p>
+            <p>price</p>
+            <input type="number"><br>
+            <button>Add to cart </button>
         </div>
 
     </section>

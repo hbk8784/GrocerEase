@@ -25,11 +25,10 @@ i {
     scrollbar-width: none; /* Firefox */
     border: 1px solid rgb(0, 0, 0, 0.3);
     padding: 10px;
-    overflow-x: hidden;
 }
-.best-seller-container{
+/* .best-seller-container{
     overflow-x: scroll;
-}
+} */
 ::-webkit-scrollbar {
     display: none;
 }

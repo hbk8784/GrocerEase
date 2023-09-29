@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{asset('css/best.css')}}">
+<link rel="stylesheet" href="{{ asset('css/best.css') }}">
 
 <h3 class="best-seller-h3">Best Sellers</h3>
 <section class="best-seller-container">
@@ -8,7 +8,7 @@
 
         <div class="products">
             <img src="https://picsum.photos/200/200" alt="">
-            <form action="" >
+            <form action="">
                 <p>Tomato</p>
                 <p>price</p>
                 <label for="qty">Qty</label>
@@ -247,6 +247,6 @@
         </div>
     </div>
 
-<i class="bi-chevron-right" id="right"></i>
-<script src="{{asset('script/best.js')}}"></script>
+    <i class="bi-chevron-right" id="right"></i>
+    <script src="{{ asset('script/best.js') }}"></script>
 </section><br><br>
