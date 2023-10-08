@@ -26,34 +26,28 @@ class AuthController extends Controller
 
         $request->validate([
            'email'=>'unique:users|email',
-           'phone'=> 'unique:users|max:11'
+           'phone'=> 'unique:users|max:11',
+           'password'=> 'confirmed'
         ]);
 
-        if($detail['password']!= $detail['confirmPassword']){
-            return view('signup', ['message', 'password not matched']);
-        }
 
-            //  $usersInfo = new Users();
+             $usersInfo = new Users();
 
-            //  if($detail['confirmPassword'] == $detail['password']){
+             if($detail['confirmPassword'] == $detail['password']){
 
-            //       $usersInfo->firstName = $detail['firstName'];
-            //       $usersInfo->lastName = $detail['lastName'];
-            //       $usersInfo->gender = $detail['gender'];
-            //       $usersInfo->dob = $detail['dob'];
-            //       $usersInfo->email  = $detail['email'];
-            //       $usersInfo->phone = $detail['phone'];
-            //       $usersInfo->address = $detail['address'];
-            //       $usersInfo->userName = $detail['userName'];
-            //       $usersInfo->password = Crypt::encrypt($detail['password']);
-            //       $usersInfo->role = $detail['role'];
-            //       $usersInfo->save();
+                  $usersInfo->firstName = $detail['firstName'];
+                  $usersInfo->lastName = $detail['lastName'];
+                  $usersInfo->gender = $detail['gender'];
+                  $usersInfo->dob = $detail['dob'];
+                  $usersInfo->email  = $detail['email'];
+                  $usersInfo->phone = $detail['phone'];
+                  $usersInfo->address = $detail['address'];
+                  $usersInfo->userName = $detail['userName'];
+                  $usersInfo->password = Crypt::encrypt($detail['password']);
+                  $usersInfo->role = $detail['role'];
+                  $usersInfo->save();
 
-            //       return view('login',['success'=>'success-show']);
-            //  }
-            //  else{
-            //     return view('signup', ['failed'=>'Registration Failed Try Again !!!']);
-            //  }
-
+                  return view('login',['success'=>'success-show']);
+             }
     }
 }

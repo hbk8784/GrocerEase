@@ -86,9 +86,9 @@
                 <label for="confirm-passwrod">Confirm Passwrod</label>
                 <input type="password" name="confirmPassword" id="confirm-passwrod" required placeholder="password">
                 <span style="color: red">
-                    @if (isset($message))
+                    @error('password')
                         {{ $message }}
-                    @endif
+                    @enderror
                 </span>
             </div><br>
 

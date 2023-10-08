@@ -18,12 +18,7 @@
             @include('component.nav-bar')
         </header>
         <main>
-            @if (isset($message))
-                @include('component.signup-c', ['message', $message])
-            @else
-                @include('component.signup-c')
-            @endif
-
+            @include('component.signup-c')
         </main>
 
         <footer>
