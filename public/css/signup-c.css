@@ -76,6 +76,14 @@ input{
 .dob-container input{
     width: 16rem;
 }
+.danger-msg-hide{
+    display: none;
+}
+.danger-msg-show{
+    display: block;
+}
+
+
 
 @media(max-width: 1100px){
     .signup-container{
@@ -95,3 +103,4 @@ input{
         width: 100%;
     }
 }
+

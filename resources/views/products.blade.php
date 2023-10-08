@@ -15,17 +15,17 @@
 <body>
     <div class="container">
         <header class="nav-bar">
-            @include('nav-bar')
+            @include('component.nav-bar')
         </header>
 
         <main>
-            @include('products-c')
+            @include('component.products-c')
 
         </main>
 
         <footer>
-            @include('footer-1')
-            @include('footer-2')
+            @include('component.footer-1')
+            @include('component.footer-2')
         </footer>
 
 </body>
