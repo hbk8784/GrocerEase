@@ -20,8 +20,12 @@
         <main>
             @if (isset($success))
                 {
-                @include('component.login-c', ['success' => $success]);
+                @include('component.login-c', ['success' => $success, 'role' => $role]);
                 }
+                {{-- @elseif (isset($failed))
+                {
+                @include('component.login-c', ['failed' => $failed]);
+                } --}}
             @else
                 @include('component.login-c');
             @endif

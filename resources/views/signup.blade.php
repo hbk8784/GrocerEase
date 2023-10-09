@@ -18,7 +18,12 @@
             @include('component.nav-bar')
         </header>
         <main>
-            @include('component.signup-c')
+            @if (isset($failed))
+                @include('component.signup-c', ['failed' => $failed])
+            @else
+                @include('component.signup-c')
+            @endif
+
         </main>
 
         <footer>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Models\Users;
+use App\Http\Controllers\DashController;
+use App\Http\Middleware\AuthCheck;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::view('/register', 'signup');
 Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/admin/dashboard', [AuthController::class, 'adminDash'])->middleware('isLogin');
+Route::get('/logout', [AuthController::class, 'logOut']);

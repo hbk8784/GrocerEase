@@ -581,6 +581,13 @@
                             </a>
                         </li>
                     </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/logout') }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+
                 </li>
                 {{-- <li class="nav-header">MISCELLANEOUS</li>
                 <li class="nav-item">

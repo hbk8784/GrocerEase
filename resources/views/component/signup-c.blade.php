@@ -86,19 +86,18 @@
                 <label for="confirm-passwrod">Confirm Passwrod</label>
                 <input type="password" name="confirmPassword" id="confirm-passwrod" required placeholder="password">
                 <span style="color: red">
-                    @error('password')
-                        {{ $message }}
-                    @enderror
+                    @if (isset($failed))
+                        {{ $failed }}
+                    @endif
                 </span>
             </div><br>
-
 
         </div>
         <div>
             <label for="">Account Type</label>
             <select name="role" id="role">
-                <option value="2">Customer</option>
-                <option value="1">Seller</option>
+                <option type='number' value="2">Customer</option>
+                <option type='number' value="1">Seller</option>
             </select>
         </div>
 
