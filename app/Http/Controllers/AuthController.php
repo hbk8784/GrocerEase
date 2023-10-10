@@ -46,9 +46,10 @@ class AuthController extends Controller
     // +--------------------------+
     public function register(Request $request){
         $detail = $request->toArray();
+      dd($detail);
         $request->validate([
            'email'=>'unique:users|email',
-           'phone'=> 'unique:users|max:10',
+           'phone'=> 'unique:users|max:10|min:10',
         ]);
              $usersInfo = new Users();
 
