@@ -27,3 +27,26 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/admin/dashboard', [AuthController::class, 'adminDash'])->middleware('isLogin');
 Route::get('/logout', [AuthController::class, 'logOut']);
+
+Route::get('/profile', function(){
+    return view('profile');
+});
+
+Route::get('/order/history', function(){
+    return view('order-history');
+});
+Route::get('/order/current', function(){
+    return view('current-order');
+});
+
+Route::get('/wishlist', function(){
+    return view('wishlist');
+});
+
+Route::get('/cart', function(){
+    return view('cart');
+});
+
+Route::get('/seller/dashboard', function(){
+    return view('Seller.seller-dash');
+});

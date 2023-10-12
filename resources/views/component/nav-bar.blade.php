@@ -37,17 +37,23 @@
         </div>
 
         <div class="profile">
-            <a href="" class="bi-person" id="person"></a>
-            <a href="" class="bi-heart"></a>
-            <a href="" class="bi-cart"></a>
+            <a href="/login" class="bi-person" id="person"></a>
+            <a href="/wish-list" class="bi-heart"></a>
+            <a href="/cart" class="bi-cart"></a>
+        </div>
+
+        <div class="profile-toggle" id="profile-toggle">
+            <p>Welcome, Hatif</p>
+            <a href="">Profile</a><br>
+            <a href="">login/logout</a>
         </div>
 
         <p class="bi-search" id="responsive-search-icon"></p>
 </div>
 </nav>
+
 <br>
 <hr>
-
 <div class="nav2-container">
     <div class="nav2-group">
         <div class="sandwi-category" id="sandwi-category">

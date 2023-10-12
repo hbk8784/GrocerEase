@@ -131,6 +131,21 @@ hr {
     border-radius: 5px;
     padding-left: 10px;
 }
+.profile-toggle{
+    display: none;
+ position: absolute;
+ left: 81%;
+ top: 6rem;
+ background: linear-gradient(45deg, rgba(255, 255, 255), #ffffff);
+ line-height: 1.7rem;
+ padding: 1rem;
+ border-radius: 0.5rem;
+ box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.5);
+}
+
+.profile-toggle a:hover{
+    color: #FAB528;
+}
 
 #responsive-search-icon{
     display: none;
@@ -162,6 +177,10 @@ hr {
      font-size: 1.6rem;
  }
  .nav2-container{
+    display: none;
+ }
+
+ .profile-toggle{
     display: none;
  }
  }
