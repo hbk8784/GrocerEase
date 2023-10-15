@@ -51,22 +51,26 @@ Route::get('/seller/dashboard', function(){
     return view('Seller.seller-dash');
 });
 
-Route::get('/thedash', function(){
-    return view('Seller.seller-dash');
-});
-
 Route::get('/seller/orders', function(){
     return view('Seller.pages.order');
 });
 
-Route::get('/seller/product', function(){
+Route::get('/seller/products', function(){
     return view('Seller.pages.products');
 });
 
-Route::get('/seller/addProduct', function(){
+Route::get('/seller/add/product', function(){
     return view('Seller.pages.addProduct');
 });
 
-Route::get('/seller/viewPayment', function(){
+Route::get('/seller/view/payment', function(){
     return view('Seller.pages.viewPayments');
+});
+
+Route::get('/seller/view/customers', function(){
+    return view('Seller.pages.viewCustomers');
+});
+
+Route::get('seller/invoice', function(){
+    return view('Seller.pages.invoice');
 });

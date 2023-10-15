@@ -17,42 +17,32 @@
                 <hr>
                 <ul class="collapse submenu list-unstyled show" id="ecommerce" data-parent="#accordionExample">
                     <li class="active">
-                        <a href="ecommerce_dashboard.html"> Dashboard </a>
+                        <a href="{{ url('/seller/dashboard') }}"> Dashboard </a>
                     </li>
                     <li>
                         <a href="{{ url('/seller/orders') }}"> Orders </a>
                     </li>
                     <li>
-                        <a href="ecommerce_product.html"> Products </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_product_catalog.html"> Product Catalog </a>
+                        <a href="{{ url('/seller/products') }}"> Products </a>
                     </li>
 
                     <li>
-                        <a href="ecommerce_addedit_product.html"> Add/Edit Products </a>
+                        <a href="{{ url('/seller/add/product') }}"> Add Products </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url('/seller/view/payment') }}"> View Payments </a>
                     </li>
                     <li>
-                        <a href="ecommerce_addedit_categories.html"> Add/Edit Categories </a>
+                        <a href="{{ url('/seller/view/customers') }}"> View Customers </a>
                     </li>
                     <li>
-                        <a href="ecommerce_view_cart.html"> View Cart </a>
+                        <a href="{{ url('seller/invoice') }}"> Invoice </a>
                     </li>
                     <li>
-                        <a href="ecommerce_view_payments.html"> View Payments </a>
+                        <a href="ecommerce_invoices.html"> Logout </a>
                     </li>
-                    <li>
-                        <a href="ecommerce_view_customers.html"> View Customers </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_checkout.html"> Checkout </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_invoices.html"> Invoice </a>
-                    </li>
-                    <li>
-                        <a href="ecommerce_product.html"> Shipm </a>
-                    </li>
+
                 </ul>
             </li>
         </ul>
