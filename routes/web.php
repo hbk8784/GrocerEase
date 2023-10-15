@@ -50,3 +50,23 @@ Route::get('/cart', function(){
 Route::get('/seller/dashboard', function(){
     return view('Seller.seller-dash');
 });
+
+Route::get('/thedash', function(){
+    return view('Seller.seller-dash');
+});
+
+Route::get('/seller/orders', function(){
+    return view('Seller.pages.order');
+});
+
+Route::get('/seller/product', function(){
+    return view('Seller.pages.products');
+});
+
+Route::get('/seller/addProduct', function(){
+    return view('Seller.pages.addProduct');
+});
+
+Route::get('/seller/viewPayment', function(){
+    return view('Seller.pages.viewPayments');
+});
