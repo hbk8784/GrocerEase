@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // +--------------------------+
-    // | Users login              |
-    // +--------------------------+
+
+
+
     public function login(Request $request){
 
         $request->validate([
@@ -24,9 +24,10 @@ class AuthController extends Controller
         $usersInfo = Users::where('userName','=',$detail['userName'])->first();
          if($usersInfo){
             if(Hash::check($detail['password'], $usersInfo->password)){
-               $request->session()->put('role', $usersInfo->role);
+               $request->session()->put('usersInfo', $usersInfo);
+                $attri = session('usersInfo');
 
-                if($usersInfo->role == 0){
+                if($attri->getAttributes()['role'] == 0){
                     return redirect('/admin/dashboard');
                 }
                 return view('app');
@@ -40,10 +41,8 @@ class AuthController extends Controller
           }
     }
 
+//--------------------------------------------------------------------------------------------------
 
-    // +--------------------------+
-    // |Registration for new user |
-    // +--------------------------+
     public function register(Request $request){
         $detail = $request->toArray();
       dd($detail);
@@ -74,24 +73,27 @@ class AuthController extends Controller
              else{
                 return view('signup', ['failed'=>'password not matched']);
              }
-
     }
+
+//--------------------------------------------------------------------------------------------------
 
     public function adminDash(Request $request){
 
-        $data = array();
-        if($request->session()->has('role')){
-            $data = Users::all();
-            return view('Admin.admin-dash', compact('data'));
+        $attri = session('usersInfo');
+        if($attri->getAttributes()['role'] == 0){
+            return view('Admin.admin-dash');
          }
          else{
            return redirect('/login');
          }
      }
 
+//-------------------------------------------------------------------------------------------------
+
      public function logOut(Request $request){
-        if($request->session()->has('role')){
-            $request->session()->pull('role');
+        $attri = session('usersInfo');
+        if($arrti->getAttributes()['role']){
+            $request->session()->flush();
             return redirect('/login');
         }
         return redirect('/login');
@@ -101,3 +103,5 @@ class AuthController extends Controller
 
      }
 }
+
+//-------------------------------------------------------------------------------------------------

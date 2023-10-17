@@ -28,49 +28,25 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/admin/dashboard', [AuthController::class, 'adminDash'])->middleware('isLogin');
 Route::get('/logout', [AuthController::class, 'logOut']);
 
-Route::get('/profile', function(){
-    return view('profile');
+
+
+
+Route::prefix('customer')->group(function(){
+    Route::view('/profile', 'profile');
+    Route::view('/order/history', 'order-history');
+    Route::view('/order/current', 'current-order');
+    Route::view('/wishlist', 'wishlist');
+    Route::view('/cart', 'cart');
 });
 
-Route::get('/order/history', function(){
-    return view('order-history');
-});
-Route::get('/order/current', function(){
-    return view('current-order');
-});
-
-Route::get('/wishlist', function(){
-    return view('wishlist');
-});
-
-Route::get('/cart', function(){
-    return view('cart');
+Route::prefix('/seller')->group(function(){
+    Route::view('/dashboard','Seller.seller-dash');
+    Route::view('/orders', 'Seller.pages.order');
+    Route::view('/products', 'Seller.pages.products');
+    Route::view('/add/product', 'Seller.pages.addProduct');
+    Route::view('/view/payment', 'Seller.pages.viewPayments');
+    Route::view('/view/customers', 'Seller.pages.viewCustomers');
+    Route::view('/invoice', 'Seller.pages.invoice');
 });
 
-Route::get('/seller/dashboard', function(){
-    return view('Seller.seller-dash');
-});
 
-Route::get('/seller/orders', function(){
-    return view('Seller.pages.order');
-});
-
-Route::get('/seller/products', function(){
-    return view('Seller.pages.products');
-});
-
-Route::get('/seller/add/product', function(){
-    return view('Seller.pages.addProduct');
-});
-
-Route::get('/seller/view/payment', function(){
-    return view('Seller.pages.viewPayments');
-});
-
-Route::get('/seller/view/customers', function(){
-    return view('Seller.pages.viewCustomers');
-});
-
-Route::get('seller/invoice', function(){
-    return view('Seller.pages.invoice');
-});
