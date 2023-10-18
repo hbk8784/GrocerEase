@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
 
-
+//--------------------------------------------------------------------------------------------------
 
     public function login(Request $request){
 
@@ -24,13 +24,15 @@ class AuthController extends Controller
         $usersInfo = Users::where('userName','=',$detail['userName'])->first();
          if($usersInfo){
             if(Hash::check($detail['password'], $usersInfo->password)){
-               $request->session()->put('usersInfo', $usersInfo);
-                $attri = session('usersInfo');
+               $request->session()->put('usersInfo', $usersInfo->toArray());
 
-                if($attri->getAttributes()['role'] == 0){
+                if(session('usersInfo')['role'] == 1){
                     return redirect('/admin/dashboard');
                 }
-                return view('app');
+                elseif(session('usersInfo')['role'] == 2){
+                    return redirect('/seller/dashboard');
+                }
+                return redirect('/');
             }
             else{
                 return back()->with('failed', "Wrong password");
@@ -45,7 +47,7 @@ class AuthController extends Controller
 
     public function register(Request $request){
         $detail = $request->toArray();
-      dd($detail);
+
         $request->validate([
            'email'=>'unique:users|email',
            'phone'=> 'unique:users|max:10|min:10',
@@ -79,8 +81,7 @@ class AuthController extends Controller
 
     public function adminDash(Request $request){
 
-        $attri = session('usersInfo');
-        if($attri->getAttributes()['role'] == 0){
+        if(session('usersInfo')){
             return view('Admin.admin-dash');
          }
          else{
@@ -91,15 +92,24 @@ class AuthController extends Controller
 //-------------------------------------------------------------------------------------------------
 
      public function logOut(Request $request){
-        $attri = session('usersInfo');
-        if($arrti->getAttributes()['role']){
+
+        if(session('usersInfo')){
             $request->session()->flush();
             return redirect('/login');
         }
         return redirect('/login');
      }
 
+//--------------------------------------------------------------------------------------------------
+
      public function sellerDash(){
+
+        if(session('usersInfo')){
+            return view('Seller.seller-dash');
+         }
+         else{
+           return redirect('/login');
+         }
 
      }
 }

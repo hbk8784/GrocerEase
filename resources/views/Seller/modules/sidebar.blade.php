@@ -11,7 +11,7 @@
                 <a href="#ecommerce" data-toggle="collapse" aria-expanded="true">
                     <div class="">
                         <h1 class="bi bi-person-workspace"></h1>
-                        <span>Hatif Belal Khan</span>
+                        <span>{{ @Session('usersInfo')['firstName'] }} {{ @Session('usersInfo')['lastName'] }}</span>
                     </div>
                 </a>
                 <hr>
@@ -40,7 +40,7 @@
                         <a href="{{ url('seller/invoice') }}"> Invoice </a>
                     </li>
                     <li>
-                        <a href="ecommerce_invoices.html"> Logout </a>
+                        <a href="{{ url('/logout') }}"> Logout </a>
                     </li>
 
                 </ul>

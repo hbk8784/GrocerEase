@@ -39,8 +39,8 @@ Route::prefix('customer')->group(function(){
     Route::view('/cart', 'cart');
 });
 
-Route::prefix('/seller')->group(function(){
-    Route::view('/dashboard','Seller.seller-dash');
+Route::prefix('/seller')->middleware('isLogin')->group(function(){
+    Route::get('/dashboard', [AuthController::class, 'sellerDash']);
     Route::view('/orders', 'Seller.pages.order');
     Route::view('/products', 'Seller.pages.products');
     Route::view('/add/product', 'Seller.pages.addProduct');

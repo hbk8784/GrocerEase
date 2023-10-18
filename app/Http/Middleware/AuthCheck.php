@@ -16,8 +16,7 @@ class AuthCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $attri = session('usersInfo');
-        if($attri->getAttributes()['role'] > 2){
+        if(!session('usersInfo')){
             return redirect('/login')->with('failed','Access Failed, Please Login First !!!');
         }
         return $next($request);
