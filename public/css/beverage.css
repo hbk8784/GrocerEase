@@ -15,6 +15,10 @@
     text-align: center;
     border-radius: 5px;
 }
+.beverage-container img{
+    width: 13rem;
+    height: 13rem;
+}
 .beverage-h3 {
     color: white;
     text-align: center;

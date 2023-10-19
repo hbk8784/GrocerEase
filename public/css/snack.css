@@ -15,6 +15,10 @@
     text-align: center;
     border-radius: 5px;
 }
+.snack-container img{
+    width: 13rem;
+    height: 13rem;
+}
 .snack-h3 {
     margin-top: 10px;
     color: white;

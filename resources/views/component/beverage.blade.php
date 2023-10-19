@@ -1,24 +1,24 @@
-<link rel="stylesheet" href="{{asset('css/beverage.css')}}">
+<link rel="stylesheet" href="{{ asset('css/beverage.css') }}">
 
 <h3 class="beverage-h3">Beverages</h3>
 <section class="beverage-container">
     <div>
-        <img src="https://picsum.photos/200/200" alt="">
+        <img src="{{ asset('image/softdrink.jpg') }}" alt="">
         <p><a href="">Soft Drink</a></p>
     </div>
 
     <div>
-        <img src="https://picsum.photos/200/200" alt="">
+        <img src="{{ asset('image/tea.jpg') }}" alt="">
         <p><a href="">Tea</a></p>
     </div>
 
     <div>
-        <img src="https://picsum.photos/200/200" alt="">
+        <img src="{{ asset('image/coffee.webp') }}" alt="">
         <p><a href="">Coffee</a></p>
     </div>
 
     <div>
-        <img src="https://picsum.photos/200/200" alt="">
+        <img src="{{ asset('image/juice.jpg') }}" alt="">
         <p><a href="">Juice</a></p>
     </div>
 

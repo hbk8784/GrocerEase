@@ -11,10 +11,18 @@
     padding: 1rem;
     border-radius: 5px;
 }
+.b-hero-img img{
+    width: 45rem;
+    height: 30rem;
+}
 .b-options {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(2, 1fr);
+}
+.b-options img{
+    width: 13rem;
+    height: 13rem;
 }
 .b-options div {
     background-color: #f7f7f7;
