@@ -132,6 +132,7 @@ hr {
     padding-left: 10px;
 }
 .profile-toggle{
+    width: 10rem;
     display: none;
  position: absolute;
  left: 81%;

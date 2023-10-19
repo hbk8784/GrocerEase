@@ -6,21 +6,23 @@
     <nav class="nav-container">
         <p class="bi-list" id="sandwi-icon"></p>
         <div class="logo-container">
-            <img src="{{ asset('logo.png') }}" alt="Logo" class="logo-img">
+            <a href="{{ url('/') }}">
+                <img src="{{ asset('logo.png') }}" alt="Logo" class="logo-img">
+            </a>
+
         </div>
 
         <div class="main-catagroy-container">
             <div class="catagory-container">
                 <select name="catagory" class="catagory">
                     <option value="all">ALL CATEGORIES</option>
-                    <option value="breads-sweets">Breads Sweets</option>
-                    <option value="coffees-teas">Coffees and Teas</option>
-                    <option value="food-cupboard">Food Cupboard</option>
-                    <option value="frozen-seafoods">Frozen Seafoods</option>
-                    <option value="fruits-vegetables">Fruits & Vegetables</option>
-                    <option value="milk-daries">Milks and Dairies</option>
-                    <option value="pet-foods">Pet Foods</option>
-                    <option value="raw-meats">Raw Meats</option>
+                    <option value="breads-sweets">Sweets</option>
+                    <option value="coffees-teas">Snacks</option>
+                    <option value="food-cupboard">Beverages</option>
+                    <option value="frozen-seafoods">Fruits & Vegetables</option>
+                    <option value="fruits-vegetables">Milks and Dairies</option>
+                    <option value="milk-daries">Beauty & Hygiene</option>
+                    <option value="pet-foods">Cleaning & Household</option>
                 </select>
             </div>
 
@@ -38,14 +40,24 @@
 
         <div class="profile">
             <a href="/login" class="bi-person" id="person"></a>
-            <a href="/wish-list" class="bi-heart"></a>
-            <a href="/cart" class="bi-cart"></a>
+            <a href="{{ url('/customer/wishlist') }}" class="bi-heart"></a>
+            <a href="{{ url('/customer/cart') }}" class="bi-cart"></a>
         </div>
 
         <div class="profile-toggle" id="profile-toggle">
-            <p>Welcome, Hatif</p>
-            <a href="">Profile</a><br>
-            <a href="">login/logout</a>
+            @if (@Session('usersInfo'))
+                <Span>Welcome, </Span>
+            @endif
+
+            <span>{{ @Session('usersInfo')['firstName'] }}</span><br>
+            <a href="{{ url('/customer/profile') }}">Profile</a><br>
+            <a href="{{ url('/customer/order/current') }}">Orders</a><br>
+            <a href="{{ url('customer/order/history') }}">History</a><br>
+            @if (@Session('usersInfo'))
+                <a href="{{ url('/logout') }}">Logout</a>
+            @else
+                <a href="{{ url('/login') }}">Login</a>
+            @endif
         </div>
 
         <p class="bi-search" id="responsive-search-icon"></p>
@@ -66,21 +78,19 @@
     </div>
     <br>
     <ul class="option" id="option">
-        <li><a href="">Breads Sweets</a></li>
+        <li><a href="">Sweets</a></li>
         <hr>
-        <li><a href="">Coffees and Teas</a></li>
+        <li><a href="">Snack</a></li>
         <hr>
-        <li><a href="">Food Cupboard</a></li>
+        <li><a href="">Beverages</a></li>
         <hr>
-        <li><a href="">Frozen Seafoods</a></li>
-        <hr>
-        <li><a href="">Fruits & Vegetables</a></li>
+        <li><a href="">Fruites & Vegetables</a></li>
         <hr>
         <li><a href="">Milks and Dairies</a></li>
         <hr>
-        <li><a href="">Pet Foods</a></li>
+        <li><a href="">Beauty & Hygiene</a></li>
         <hr>
-        <li><a href="">Raw Meats</a></li>
+        <li><a href="">Cleaning & Household</a></li>
     </ul>
 
 </div>

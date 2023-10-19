@@ -5,7 +5,7 @@
      <h2 style="color: green" class="success-hide ">
          @if (isset($success) && $role == 1)
              You have Registered Successfully !!! <br> wait for Admin approval !!!
-         @elseif (isset($success) && $role == 2)
+         @elseif (isset($success) && $role > 2)
              You have Registered Successfully !!! <br> Login to Continue !!!
          @endif
      </h2>

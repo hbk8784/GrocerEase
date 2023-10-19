@@ -30,15 +30,16 @@ Route::get('/logout', [AuthController::class, 'logOut']);
 
 
 
-
-Route::prefix('customer')->group(function(){
+//customer routes --------------------------------------------------------------------------
+Route::prefix('customer')->middleware('isLogin')->group(function(){
     Route::view('/profile', 'profile');
     Route::view('/order/history', 'order-history');
     Route::view('/order/current', 'current-order');
     Route::view('/wishlist', 'wishlist');
     Route::view('/cart', 'cart');
-});
+}); //-------------------------------------------------------------------------------------
 
+//seller routes ---------------------------------------------------------------------------
 Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::get('/dashboard', [AuthController::class, 'sellerDash']);
     Route::view('/orders', 'Seller.pages.order');
@@ -47,6 +48,6 @@ Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::view('/view/payment', 'Seller.pages.viewPayments');
     Route::view('/view/customers', 'Seller.pages.viewCustomers');
     Route::view('/invoice', 'Seller.pages.invoice');
-});
+});//--------------------------------------------------------------------------------------
 
 

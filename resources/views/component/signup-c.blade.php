@@ -96,8 +96,8 @@
         <div>
             <label for="">Account Type</label>
             <select name="role" id="role">
-                <option type='number' value="2">Customer</option>
-                <option type='number' value="1">Seller</option>
+                <option type='number' value="3">Customer</option>
+                <option type='number' value="2">Seller</option>
             </select>
         </div>
 
