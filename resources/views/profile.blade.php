@@ -27,11 +27,18 @@
                     <tbody>
                         <tr>
                             <td>Registered:</td>
-                            <td>01/23/2017</td>
+                            <td>{{ @Session('usersInfo')['created_at'] }}</td>
                         </tr>
                         <tr>
                             <td>Role:</td>
-                            <td>Customer</td>
+                            @if (@Session('usersInfo')['role'] == 1)
+                                <td>Admin</td>
+                            @elseif (@Session('usersInfo')['role'] == 2)
+                                <td>Seller</td>
+                            @else
+                                <td>Customer</td>
+                            @endif
+
                         </tr>
                         <tr>
                             <td>Status:</td>
@@ -50,21 +57,32 @@
                 <table class="table user-view-table m-0">
                     <tbody>
                         <tr>
+                            <td>ID:</td>
+                            <td>{{ @Session('usersInfo')['id'] }}</td>
+                        </tr>
+                        <tr>
                             <td>Username:</td>
-                            <td>nmaxwell</td>
+                            <td>{{ @Session('usersInfo')['userName'] }}</td>
                         </tr>
                         <tr>
                             <td>Name:</td>
-                            <td>Nelle Maxwell</td>
+                            <td>{{ @Session('usersInfo')['firstName'] }} {{ @Session('usersInfo')['lastName'] }}</td>
                         </tr>
                         <tr>
                             <td>E-mail:</td>
-                            <td>nmaxwell@mail.com</td>
+                            <td>{{ @Session('usersInfo')['email'] }}</td>
                         </tr>
+
                         <tr>
-                            <td>Company:</td>
-                            <td>Company Ltd.</td>
+                            <td>Address:</td>
+                            <td>{{ @Session('usersInfo')['address'] }}</td>
                         </tr>
+
+                        <tr>
+                            <td>Gender:</td>
+                            <td>{{ @Session('usersInfo')['gender'] }}</td>
+                        </tr>
+
                     </tbody>
                 </table>
 
@@ -72,11 +90,11 @@
                     <tbody>
                         <tr>
                             <td>Birthday:</td>
-                            <td>May 3, 1995</td>
+                            <td>{{ @Session('usersInfo')['dob'] }}</td>
                         </tr>
                         <tr>
                             <td>Country:</td>
-                            <td>Canada</td>
+                            <td>India</td>
                         </tr>
                         <tr>
                             <td>Languages:</td>
@@ -89,7 +107,7 @@
                     <tbody>
                         <tr>
                             <td>Phone:</td>
-                            <td>+0 (123) 456 7891</td>
+                            <td>{{ @Session('usersInfo')['phone'] }}</td>
                         </tr>
                     </tbody>
                 </table>

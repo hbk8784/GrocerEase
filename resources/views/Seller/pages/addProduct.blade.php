@@ -76,7 +76,22 @@
 
                                                         <div class="form-group mb-4">
                                                             <div class="row">
-                                                                <label class="col-md-4">Category :</label>
+                                                                <label class="col-md-4">Category Main :</label>
+                                                                <div class="col-md-8">
+                                                                    <select class="form-control form-custom mb-4"
+                                                                        name="category">
+                                                                        <option value="">Select Category
+                                                                        </option>
+                                                                        <option value="category1">Electronics</option>
+                                                                        <option value="category2">Apparel</option>
+                                                                        <option value="category3">Clothing</option>
+                                                                        <option value="category4">Furniture</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <label class="col-md-4">Category Sub :</label>
                                                                 <div class="col-md-8">
                                                                     <select class="form-control form-custom mb-4"
                                                                         name="category">
