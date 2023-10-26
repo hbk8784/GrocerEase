@@ -30,9 +30,21 @@ class AuthController extends Controller
                     return redirect('/admin/dashboard');
                 }
                 elseif(session('usersInfo')['role'] == 2){
+                    if(session('usersInfo')['active'])
                     return redirect('/seller/dashboard');
+                    else{
+                        $request->session()->flush();
+                        return redirect('/login')->with('active', "your account is inactive");
+                    }
+
                 }
-                return redirect('/');
+                elseif(session('usersInfo')['active']){
+                    return redirect('/');
+                }
+                else{
+                    $request->session()->flush();
+                    return redirect('/login')->with('active', "Your account is inactive");
+                }
             }
             else{
                 return back()->with('failed', "Wrong password");
@@ -56,8 +68,8 @@ class AuthController extends Controller
 
               //checking if password and confirm password is matching before saving the data
              if($detail['confirmPassword'] == $detail['password']){
-
-                  $usersInfo->firstName = $detail['firstName'];
+                 if($detail['role'] == 2){
+                    $usersInfo->firstName = $detail['firstName'];
                   $usersInfo->lastName = $detail['lastName'];
                   $usersInfo->gender = $detail['gender'];
                   $usersInfo->dob = $detail['dob'];
@@ -67,9 +79,23 @@ class AuthController extends Controller
                   $usersInfo->userName = $detail['userName'];
                   $usersInfo->password = Hash::make($detail['password']);
                   $usersInfo->role = $detail['role'];
+                  $usersInfo->active = 0 ;
                   $usersInfo->save();
-
-
+                 }
+                 else{
+                    $usersInfo->firstName = $detail['firstName'];
+                    $usersInfo->lastName = $detail['lastName'];
+                    $usersInfo->gender = $detail['gender'];
+                    $usersInfo->dob = $detail['dob'];
+                    $usersInfo->email  = $detail['email'];
+                    $usersInfo->phone = $detail['phone'];
+                    $usersInfo->address = $detail['address'];
+                    $usersInfo->userName = $detail['userName'];
+                    $usersInfo->password = Hash::make($detail['password']);
+                    $usersInfo->role = $detail['role'];
+                    $usersInfo->active = 1;
+                    $usersInfo->save();
+                 }
                     return view('login',['success'=>'success-show', 'role'=> $detail['role']]);
              }
              else{

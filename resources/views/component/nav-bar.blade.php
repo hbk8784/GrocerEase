@@ -56,6 +56,7 @@
             @if (@Session('usersInfo'))
                 <a href="{{ url('/logout') }}">Logout</a>
             @else
+                <a href="{{ url('/register') }}">Register / </a>
                 <a href="{{ url('/login') }}">Login</a>
             @endif
         </div>

@@ -24,8 +24,7 @@ return new class extends Migration
             $table->string('image');
             $table->integer('qty');
             $table->timestamps();
-            $table->integer('sid');
-            $table->foreign('sid')->references('id')->on('users')->where('role', 2)->onDelete('CASCADE');
+            $table->bigInteger('sid');
         });
     }
 

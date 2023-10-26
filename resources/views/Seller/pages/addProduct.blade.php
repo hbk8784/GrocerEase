@@ -55,7 +55,10 @@
                                             </div>
                                             <div class="card-body">
                                                 <div class="card-body">
-                                                    <form class="form-horizontal">
+                                                    {{-- form begins here --}}
+                                                    <form class="form-horizontal" action="/seller/add/product"
+                                                        method="POST" enctype="multipart/form-data">
+                                                        @csrf
                                                         <div class="form-group mb-4">
                                                             <div class="row">
                                                                 <label class="col-md-4">Name :</label>
@@ -69,7 +72,7 @@
                                                             <div class="row">
                                                                 <label class="col-md-4">Description :</label>
                                                                 <div class="col-md-8">
-                                                                    <textarea rows="4" cols="5" name="description" class="form-control"></textarea>
+                                                                    <textarea rows="4" cols="5" name="desc" class="form-control"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -79,7 +82,7 @@
                                                                 <label class="col-md-4">Category Main :</label>
                                                                 <div class="col-md-8">
                                                                     <select class="form-control form-custom mb-4"
-                                                                        name="category">
+                                                                        name="maincat">
                                                                         <option value="">Select Category
                                                                         </option>
                                                                         <option value="category1">Electronics</option>
@@ -94,7 +97,7 @@
                                                                 <label class="col-md-4">Category Sub :</label>
                                                                 <div class="col-md-8">
                                                                     <select class="form-control form-custom mb-4"
-                                                                        name="category">
+                                                                        name="subcat">
                                                                         <option value="">Select Category
                                                                         </option>
                                                                         <option value="category1">Electronics</option>
@@ -137,11 +140,60 @@
                                                                     <select class="form-control form-custom"
                                                                         name="status">
                                                                         <option value="">Please Select</option>
-                                                                        <option value="status1">In Stock</option>
-                                                                        <option value="status2">Out of Stock</option>
+                                                                        <option value="1">In Stock</option>
+                                                                        <option value="0">Out of Stock</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                        </div>
+
+                                                        <div class="form-group mb-4">
+                                                            <div class="row">
+                                                                <label class="col-md-4">Price :</label>
+                                                                <div class="col-md-8">
+                                                                    <input class="form-control" name="price"
+                                                                        type="text">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <label class="col-md-12"><span>Image</span></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <label class="col-md-4">Image :</label>
+                                                                <div class="col-md-8">
+                                                                    <div class="mb-3">
+                                                                        <div class="custom-file">
+                                                                            <input type="file"
+                                                                                class="form-control-file"
+                                                                                id="file-input" name="media">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <label class="col-md-12"><span>INVENTORY</span></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <label class="col-md-4">QTY :</label>
+                                                                <div class="col-md-8">
+                                                                    <input class="form-control" name="qty"
+                                                                        type="number">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="align-center">
+                                                            <input value="Insert Product" class="btn"
+                                                                type="submit">
                                                         </div>
                                                     </form>
                                                 </div>
@@ -149,63 +201,6 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-5 col-md-12">
-                                        <div class="card card-default">
-                                            <div class="card-heading">
-                                                <h2 class="card-title"><span>PRICING</span></h2>
-                                            </div>
-                                            <div class="card-body">
-                                                <form class="form-horizontal">
-                                                    <div class="form-group mb-4">
-                                                        <div class="row">
-                                                            <label class="col-md-4">Price :</label>
-                                                            <div class="col-md-8">
-                                                                <input class="form-control" name="price"
-                                                                    type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-md-12"><span>Image</span></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-md-4">Image :</label>
-                                                            <div class="col-md-8">
-                                                                <div class="mb-3">
-                                                                    <div class="custom-file">
-                                                                        <input type="file"
-                                                                            class="form-control-file" id="file-input">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-md-12"><span>INVENTORY</span></label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="row">
-                                                            <label class="col-md-4">QTY :</label>
-                                                            <div class="col-md-8">
-                                                                <input class="form-control" name="qty"
-                                                                    type="text">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="align-center">
-                                            <input value="Insert Product" class="btn" type="submit">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

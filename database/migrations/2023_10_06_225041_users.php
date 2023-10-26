@@ -23,6 +23,7 @@ return new class extends Migration
                   $table->string('userName');
                   $table->string('password');
                   $table->integer('role');
+                  $table->integer('active');
                   $table->timestamps();
 
         });

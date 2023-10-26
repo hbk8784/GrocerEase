@@ -20,7 +20,6 @@
 
         <main>
             @include('component.products-c')
-
         </main>
 
         <footer>

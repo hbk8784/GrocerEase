@@ -3,7 +3,7 @@
  <div style="text-align: center">
 
      <h2 style="color: green" class="success-hide ">
-         @if (isset($success) && $role == 1)
+         @if (isset($success) && $role == 2)
              You have Registered Successfully !!! <br> wait for Admin approval !!!
          @elseif (isset($success) && $role > 2)
              You have Registered Successfully !!! <br> Login to Continue !!!
@@ -13,6 +13,10 @@
      <h2 style="color: red">
          @if (@Session()->has('failed'))
              {{ @Session()->get('failed') }}
+         @endif
+
+         @if (@Session()->has('active'))
+             {{ @Session()->get('active') }}
          @endif
      </h2>
  </div>

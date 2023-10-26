@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SellerController;
 use App\Models\Users;
 use App\Http\Controllers\DashController;
 use App\Http\Middleware\AuthCheck;
@@ -43,11 +44,15 @@ Route::prefix('customer')->middleware('isLogin')->group(function(){
 Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::get('/dashboard', [AuthController::class, 'sellerDash']);
     Route::view('/orders', 'Seller.pages.order');
-    Route::view('/products', 'Seller.pages.products');
+    Route::get('/products', [SellerController::class, 'showProducts']);
     Route::view('/add/product', 'Seller.pages.addProduct');
+    Route::post('/add/product',[SellerController::class, 'addProducts']);
     Route::view('/view/payment', 'Seller.pages.viewPayments');
     Route::view('/view/customers', 'Seller.pages.viewCustomers');
     Route::view('/invoice', 'Seller.pages.invoice');
 });//--------------------------------------------------------------------------------------
 
 
+Route::get('/invoice', function(){
+    return view('invoice');
+});
