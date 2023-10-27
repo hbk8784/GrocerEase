@@ -77,7 +77,7 @@
                                                     <td>{{ $product->pid }}</td>
                                                     <td class="text-center">
                                                         <a class="product-list-img" href="javascript: void(0);"><img
-                                                                src="{{ asset('storage/1698074477-ws.jpg') }}"
+                                                                src="{{ asset('storage/' . $product->image) }}"
                                                                 alt="product"></a>
                                                     </td>
                                                     <td>{{ $product->name }}</td>

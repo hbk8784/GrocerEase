@@ -20,7 +20,7 @@
                     <option value="coffees-teas">Snacks</option>
                     <option value="food-cupboard">Beverages</option>
                     <option value="frozen-seafoods">Fruits & Vegetables</option>
-                    <option value="fruits-vegetables">Milks and Dairies</option>
+
                     <option value="milk-daries">Beauty & Hygiene</option>
                     <option value="pet-foods">Cleaning & Household</option>
                 </select>
@@ -86,8 +86,6 @@
         <li><a href="">Beverages</a></li>
         <hr>
         <li><a href="">Fruites & Vegetables</a></li>
-        <hr>
-        <li><a href="">Milks and Dairies</a></li>
         <hr>
         <li><a href="">Beauty & Hygiene</a></li>
         <hr>

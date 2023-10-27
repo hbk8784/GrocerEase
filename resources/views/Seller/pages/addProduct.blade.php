@@ -85,16 +85,20 @@
                                                                         name="maincat">
                                                                         <option value="">Select Category
                                                                         </option>
-                                                                        <option value="category1">Sweets</option>
-                                                                        <option value="category2">Sanck</option>
-                                                                        <option value="category3">Beverages</option>
-                                                                        <option value="category4">Fruits & Vegetables
+                                                                        <option value="sweets">Sweets</option>
+                                                                        <option value="sanck">Sanck</option>
+                                                                        <option value="beverages">Beverages</option>
+                                                                        <option value="fruits vegetables">Fruits &
+                                                                            Vegetables
                                                                         </option>
-                                                                        <option value="category4">Milk & Dairies
+
+                                                                        <option value="beauty hygiene">Beauty & Hygiene
                                                                         </option>
-                                                                        <option value="category4">Beauty & Hygiene
+                                                                        <option value="fruits vegetables">Home &
+                                                                            Kitchen
                                                                         </option>
-                                                                        <option value="category4">Cleaning & Household
+                                                                        <option value="cleaning household">Cleaning &
+                                                                            Household
                                                                         </option>
                                                                     </select>
                                                                 </div>
@@ -107,45 +111,57 @@
                                                                         name="subcat">
                                                                         <option value="">Select Category
                                                                         </option>
-                                                                        <option value="category1">Seasonal Fruits &
+                                                                        <option value="seasonal fruits vegetable">
+                                                                            Seasonal Fruits &
                                                                             Vegetable
                                                                         </option>
-                                                                        <option value="category2">Fresh Vegetable
+                                                                        <option value="fresh vegetable">Fresh Vegetable
                                                                         </option>
-                                                                        <option value="category3">Fresh Fruits</option>
-                                                                        <option value="category4">Herbs & Seasonings
+                                                                        <option value="fresh fruits">Fresh Fruits
                                                                         </option>
-                                                                        <option value="category2">Exotic Fruits &
+                                                                        <option value="herbs seasonings">Herbs &
+                                                                            Seasonings
+                                                                        </option>
+                                                                        <option value="exotic fruits vegetables">Exotic
+                                                                            Fruits &
                                                                             Vegetables</option>
-                                                                        <option value="category2">Chips & Nachos
+                                                                        <option value="chips nachos">Chips & Nachos
                                                                         </option>
-                                                                        <option value="category2">Biscutes & Cookies
+                                                                        <option value="biscutes cookies">Biscutes &
+                                                                            Cookies
                                                                         </option>
-                                                                        <option value="category2">Pasta & Sauce</option>
-                                                                        <option value="category2">Chocolate</option>
-                                                                        <option value="category2">Soft Drink</option>
-                                                                        <option value="category2">Tea</option>
-                                                                        <option value="category2">Coffee</option>
-                                                                        <option value="category2">Juice</option>
-                                                                        <option value="category2">Makeup</option>
-                                                                        <option value="category2">Anti Ageing</option>
-                                                                        <option value="category2">Sentful Perfumes
+                                                                        <option value="pasta sauce">Pasta & Sauce
                                                                         </option>
-                                                                        <option value="category2">Bathing Essentials
+                                                                        <option value="chocolate">Chocolate</option>
+                                                                        <option value="soft drink">Soft Drink</option>
+                                                                        <option value="tea">Tea</option>
+                                                                        <option value="coffee">Coffee</option>
+                                                                        <option value="juice">Juice</option>
+                                                                        <option value="makeup">Makeup</option>
+                                                                        <option value="anti ageing">Anti Ageing
                                                                         </option>
-                                                                        <option value="category2">Moisturisers & Serums
+                                                                        <option value="sentful perfumes">Sentful
+                                                                            Perfumes
                                                                         </option>
-                                                                        <option value="category2">Kitchen Tools
+                                                                        <option value="bathing essentials">Bathing
+                                                                            Essentials
                                                                         </option>
-                                                                        <option value="category2">Stationary</option>
-                                                                        <option value="category2">Storage Solutions
+                                                                        <option value="moisturisers serums">
+                                                                            Moisturisers & Serums
                                                                         </option>
-                                                                        <option value="category2">Battery & Electricals
+                                                                        <option value="kitchen tools">Kitchen Tools
                                                                         </option>
-                                                                        <option value="category2">Detergent</option>
-                                                                        <option value="category2">Cleaners</option>
-                                                                        <option value="category2">Fresheners</option>
-                                                                        <option value="category2">Kitchen Wipes
+                                                                        <option value="stationary">Stationary</option>
+                                                                        <option value="storage solutions">Storage
+                                                                            Solutions
+                                                                        </option>
+                                                                        <option value="battery electricals">Battery &
+                                                                            Electricals
+                                                                        </option>
+                                                                        <option value="detergent">Detergent</option>
+                                                                        <option value="cleaners">Cleaners</option>
+                                                                        <option value="fresheners">Fresheners</option>
+                                                                        <option value="kitchen wipes">Kitchen Wipes
                                                                         </option>
                                                                     </select>
                                                                 </div>
@@ -158,42 +174,42 @@
                                                                     <select class="form-control form-custom"
                                                                         name="brand">
                                                                         <option value="">Select a Brand</option>
-                                                                        <option value="brand1">Fresho</option>
-                                                                        <option value="brand2">Maggi</option>
-                                                                        <option value="brand3">Britannia</option>
-                                                                        <option value="brand4">Parle</option>
-                                                                        <option value="brand4">Lays</option>
-                                                                        <option value="brand4">Cadbury</option>
-                                                                        <option value="brand4">Kurkure</option>
-                                                                        <option value="brand4">ACT II</option>
-                                                                        <option value="brand4">Sunfeast</option>
-                                                                        <option value="brand4">wai wai</option>
-                                                                        <option value="brand4">Coca Cola</option>
-                                                                        <option value="brand4">Thums Up</option>
-                                                                        <option value="brand4">Pepsi</option>
-                                                                        <option value="brand4">Lipton</option>
-                                                                        <option value="brand4">Red Label</option>
-                                                                        <option value="brand4">Taj</option>
-                                                                        <option value="brand4">Nescafe</option>
-                                                                        <option value="brand4">BRU</option>
-                                                                        <option value="brand4">Tropicana</option>
-                                                                        <option value="brand4">Real</option>
-                                                                        <option value="brand4">Lakme</option>
-                                                                        <option value="brand4">Ponds</option>
-                                                                        <option value="brand4">Engage</option>
-                                                                        <option value="brand4">Nivea</option>
-                                                                        <option value="brand4">Dove</option>
-                                                                        <option value="brand4">Pears</option>
-                                                                        <option value="brand4">Prestige</option>
-                                                                        <option value="brand4">Pioner</option>
-                                                                        <option value="brand4">Apsara</option>
-                                                                        <option value="brand4">Milton</option>
-                                                                        <option value="brand4">Duracell</option>
-                                                                        <option value="brand4">Phillips</option>
-                                                                        <option value="brand4">Surf Excel</option>
-                                                                        <option value="brand4">Domix</option>
-                                                                        <option value="brand4">Odonil</option>
-                                                                        <option value="brand4">Colin</option>
+                                                                        <option value="Fresho">Fresho</option>
+                                                                        <option value="Maggi">Maggi</option>
+                                                                        <option value="Britannia">Britannia</option>
+                                                                        <option value="Parle">Parle</option>
+                                                                        <option value="Lays">Lays</option>
+                                                                        <option value="Cadbury">Cadbury</option>
+                                                                        <option value="Kurkure">Kurkure</option>
+                                                                        <option value="ACT II">ACT II</option>
+                                                                        <option value="Sunfeast">Sunfeast</option>
+                                                                        <option value="wai wai">wai wai</option>
+                                                                        <option value="Coca Cola">Coca Cola</option>
+                                                                        <option value="Thums Up">Thums Up</option>
+                                                                        <option value="Pepsi">Pepsi</option>
+                                                                        <option value="Lipton">Lipton</option>
+                                                                        <option value="Red/Label">Red Label</option>
+                                                                        <option value="Taj">Taj</option>
+                                                                        <option value="Nescafe">Nescafe</option>
+                                                                        <option value="BRU">BRU</option>
+                                                                        <option value="Tropicana">Tropicana</option>
+                                                                        <option value="Real">Real</option>
+                                                                        <option value="Lakme">Lakme</option>
+                                                                        <option value="Ponds">Ponds</option>
+                                                                        <option value="Engage">Engage</option>
+                                                                        <option value="Nivea">Nivea</option>
+                                                                        <option value="Dove">Dove</option>
+                                                                        <option value="Pears">Pears</option>
+                                                                        <option value="Prestige">Prestige</option>
+                                                                        <option value="Pioner">Pioner</option>
+                                                                        <option value="Apsara">Apsara</option>
+                                                                        <option value="Milton">Milton</option>
+                                                                        <option value="Duracell">Duracell</option>
+                                                                        <option value="Phillips">Phillips</option>
+                                                                        <option value="Surf Excel">Surf Excel</option>
+                                                                        <option value="Domix">Domix</option>
+                                                                        <option value="Odonil">Odonil</option>
+                                                                        <option value="Colin">Colin</option>
 
                                                                     </select>
                                                                 </div>

@@ -21,10 +21,6 @@
             <p><a href="">Fruites & Vegetables</a></p>
         </div>
         <div>
-            <img src="{{ asset('image/milk.png') }}" alt="">
-            <p><a href="">Milk & Dairies</a></p>
-        </div>
-        <div>
             <img src="{{ asset('image/beauty.png') }}" alt="">
             <p><a href="">Beauty & Hygiene</a></p>
         </div>
