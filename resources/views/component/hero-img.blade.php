@@ -4,20 +4,14 @@
 
     <section class="ad-fit">
 
-        <div class="ad1">
-            <img src="{{ asset('ad1.jpg') }}" alt="juice-box">
-            <div class="ad1-desc">
-                <button>Shop Now</button>
-            </div><br>
-        </div>
-
-        <div class="ad2">
-            <img src="{{ asset('ad2.jpg') }}" alt="juice-box">
-            <div class="ad2-desc">
-                <button>Shop Now</button>
+        @foreach ($hero as $item)
+            <div class="ad1">
+                <img src="{{ asset('storage/' . $item->image) }}" alt="juice-box">
+                <div class="ad1-desc">
+                    <button>Shop Now</button>
+                </div><br>
             </div>
-
-        </div>
+        @endforeach
     </section>
 </div>
 

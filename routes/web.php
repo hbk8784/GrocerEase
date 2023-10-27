@@ -6,6 +6,7 @@ use App\Http\Controllers\SellerController;
 use App\Models\Users;
 use App\Http\Controllers\DashController;
 use App\Http\Middleware\AuthCheck;
+use App\Http\Controllers\OnLoad;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,11 @@ use App\Http\Middleware\AuthCheck;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/', 'app');
+Route::get('/', [OnLoad::class, 'load']);
+
+// Route::get('/', function(){
+//     return view('app');
+// });
 
 Route::view('/login', 'login');
 Route::post('/login', [AuthController::class, 'login']);

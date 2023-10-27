@@ -19,9 +19,9 @@
             @include('component.nav-bar')
         </header>
         <main>
-            @include('component.hero-img')
+            @include('component.hero-img', compact('hero'))
             @include('component.browse-by-category')
-            @include('component.best')
+            @include('component.best', compact('bestSeller'))
             @include('component.fruits-vegetable')
 
             <div class="dark" style="margin-bottom: 30px">
