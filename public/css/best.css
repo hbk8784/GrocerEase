@@ -19,7 +19,7 @@ i {
     max-width: 100%;
     height: max-content;
     display: flex;
-    gap: 15px;
+    gap: 30px;
     overflow-x: scroll;
     scroll-behavior: smooth;
     -ms-overflow-style: none; /* IE and Edge */
@@ -32,6 +32,15 @@ i {
 }
 .products .products-price{
     color: rgb(0, 0, 0, 0.4);
+}
+.products button:hover{
+    cursor: pointer;
+}
+.products-form{
+    display: flex;
+}
+.form1{
+    display: flex;
 }
 /* .best-seller-container{
     overflow-x: scroll;

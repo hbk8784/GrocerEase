@@ -9,7 +9,7 @@ class OnLoad extends Controller
 {
     public function load(){
 
-          $bestSeller = Products::inRandomOrder()->take(20)->get();
+          $bestSeller = Products::inRandomOrder()->take(10)->get();
           $hero = products::inRandomOrder()->take(2)->get();
 
                return view('app', compact('bestSeller','hero'));

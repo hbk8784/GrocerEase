@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SellerController;
 use App\Models\Users;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\RequestUserController;
 use App\Http\Middleware\AuthCheck;
 use App\Http\Controllers\OnLoad;
 
@@ -39,10 +40,16 @@ Route::get('/logout', [AuthController::class, 'logOut']);
 //customer routes --------------------------------------------------------------------------
 Route::prefix('customer')->middleware('isLogin')->group(function(){
     Route::view('/profile', 'profile');
-    Route::view('/order/history', 'order-history');
+    Route::get('/order/history', [RequestUserController::class, 'orderHistory']);
     Route::view('/order/current', 'current-order');
-    Route::view('/wishlist', 'wishlist');
-    Route::view('/cart', 'cart');
+    Route::get('/wishlist', [RequestUserController::class, 'showWishList']);
+    Route::post('/wishlist/{id}', [RequestUserController::class, 'Wishlist']);
+    Route::get('/remove/wishlist/{id}', [RequestUserController::class, 'removeWishList']);
+    Route::post('/cart/{id}', [RequestUserController::class, 'cart']);
+    Route::get('/cart', [RequestUserController::class, 'showCart']);
+    Route::get('/remove/cart/{id}', [RequestUserController::class, 'removeCart']);
+    Route::post('/order/{data}', [RequestUserController::class, 'setOrder']);
+    Route::get('/invoice/{date}', [RequestUserController::class, 'getInvoice']);
 }); //-------------------------------------------------------------------------------------
 
 //seller routes ---------------------------------------------------------------------------
@@ -58,6 +65,10 @@ Route::prefix('/seller')->middleware('isLogin')->group(function(){
 });//--------------------------------------------------------------------------------------
 
 
-Route::get('/invoice', function(){
-    return view('invoice');
+// Route::get('/invoice', function(){
+//     return view('invoice');
+// });
+
+Route::get('/payment', function(){
+    return view('payment');
 });

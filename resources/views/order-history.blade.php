@@ -36,94 +36,37 @@
                 <table class="table m-0">
                     <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Item</th>
+                            <th>Order Date</th>
                             <th>Status</th>
-                            <th>Popularity</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR9842</a>
-                            </td>
-                            <td>Call of Duty IV</td>
-                            <td><span class="badge badge-success">Shipped</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#00a65a" data-height="20">
-                                    90,80,90,-70,61,-83,63</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR1848</a>
-                            </td>
-                            <td>Samsung Smart TV</td>
-                            <td><span class="badge badge-warning">Pending</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#f39c12" data-height="20">
-                                    90,80,-90,70,61,-83,68</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR7429</a>
-                            </td>
-                            <td>iPhone 6 Plus</td>
-                            <td><span class="badge badge-danger">Delivered</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#f56954" data-height="20">
-                                    90,-80,90,70,-61,83,63</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR7429</a>
-                            </td>
-                            <td>Samsung Smart TV</td>
-                            <td><span class="badge badge-info">Processing</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#00c0ef" data-height="20">
-                                    90,80,-90,70,-61,83,63</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR1848</a>
-                            </td>
-                            <td>Samsung Smart TV</td>
-                            <td><span class="badge badge-warning">Pending</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#f39c12" data-height="20">
-                                    90,80,-90,70,61,-83,68</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR7429</a>
-                            </td>
-                            <td>iPhone 6 Plus</td>
-                            <td><span class="badge badge-danger">Delivered</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#f56954" data-height="20">
-                                    90,-80,90,70,-61,83,63</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><a href="{{ asset('admin/pages/examples/invoice.html') }}">OR9842</a>
-                            </td>
-                            <td>Call of Duty IV</td>
-                            <td><span class="badge badge-success">Shipped</span></td>
-                            <td>
-                                <div class="sparkbar" data-color="#00a65a" data-height="20">
-                                    90,80,90,-70,61,-83,63</div>
-                            </td>
-                        </tr>
+
+                        @foreach ($ordertime as $time)
+                            <tr>
+                                <td><a
+                                        href="{{ url('/customer//invoice/' . $time->created_at) }}">{{ $time->created_at }}</a>
+                                    ...Click for Invoice</td>
+                                <td>
+                                    @if ($time->order_status == 1)
+                                        <span class="badge badge-warning">Ordered</span>
+                                    @elseif ($time->order_status == 2)
+                                        <span class="badge badge-info">Shipped</span>
+                                    @elseif ($time->order_status == 3)
+                                        <span class="badge badge-secondary">On the way</span>
+                                    @else
+                                        <span class="badge badge-success">Delivered</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
             <!-- /.table-responsive -->
         </div>
-        <!-- /.card-body -->
-
-        <!-- /.card-footer -->
     </div>
-
-
 </body>
 
 </html>

@@ -43,80 +43,41 @@
                         </thead>
                         <tbody>
 
-                            <tr>
-                                <td class="p-4">
-                                    <div class="media align-items-center">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar1.png"
-                                            class="d-block ui-w-40 ui-bordered mr-4" alt="">
-                                        <div class="media-body">
-                                            <a href="#" class="d-block text-dark">Product 1</a>
-                                            <small>
-                                                <span class="text-muted">Color:</span>
-                                                <span class="ui-product-color ui-product-color-sm align-text-bottom"
-                                                    style="background:#e81e2c;"></span> &nbsp;
-                                                <span class="text-muted">Size: </span> EU 37 &nbsp;
-                                                <span class="text-muted">Ships from: </span> China
-                                            </small>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$57.55</td>
-                                <td class="align-middle p-4"><input type="text" class="form-control text-center"
-                                        value="2"></td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$115.1</td>
-                                <td class="text-center align-middle px-0"><a href="#"
-                                        class="shop-tooltip close float-none text-danger" title=""
-                                        data-original-title="Remove"><i class="bi bi-trash"></i></a></td>
-                            </tr>
+                            @foreach ($product as $item)
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="media align-items-center">
+                                            <img src="{{ asset('storage/' . $item->image) }}"
+                                                class="d-block ui-w-40 ui-bordered mr-4" alt="">
+                                            <div class="media-body">
+                                                <a href="#" class="d-block text-dark">{{ $item->brand }}</a>
+                                                <small>
+                                                    <span class="text-muted">{{ $item->name }} / </span>
 
-                            <tr>
-                                <td class="p-4">
-                                    <div class="media align-items-center">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
-                                            class="d-block ui-w-40 ui-bordered mr-4" alt="">
-                                        <div class="media-body">
-                                            <a href="#" class="d-block text-dark">Product 2</a>
-                                            <small>
-                                                <span class="text-muted">Color:</span>
-                                                <span class="ui-product-color ui-product-color-sm align-text-bottom"
-                                                    style="background:#000;"></span> &nbsp;
-                                                <span class="text-muted">Storage: </span> 32GB &nbsp;
-                                                <span class="text-muted">Warranty: </span> Standard - 1 year &nbsp;
-                                                <span class="text-muted">Ships from: </span> China
-                                            </small>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$1049.00</td>
-                                <td class="align-middle p-4"><input type="text" class="form-control text-center"
-                                        value="1"></td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$1049.00</td>
-                                <td class="text-center align-middle px-0"><a href="#"
-                                        class="shop-tooltip close float-none text-danger" title=""
-                                        data-original-title="Remove"><i class="bi bi-trash"></i></a></td>
-                            </tr>
+                                                    <span class="text-muted">{{ $item->weight }} /</span>
 
-                            <tr>
-                                <td class="p-4">
-                                    <div class="media align-items-center">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar2.png"
-                                            class="d-block ui-w-40 ui-bordered mr-4" alt="">
-                                        <div class="media-body">
-                                            <a href="#" class="d-block text-dark">Product 3</a>
-                                            <small>
-                                                <span class="text-muted">Ships from: </span> Germany
-                                            </small>
+                                                    <span class="text-muted">{{ $item->maincat }} /</span>
+                                                    <span class="text-muted">{{ $item->subcat }}</span>
+                                                </small>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$20.55</td>
-                                <td class="align-middle p-4"><input type="text" class="form-control text-center"
-                                        value="1"></td>
-                                <td class="text-right font-weight-semibold align-middle p-4">$20.55</td>
-                                <td class="text-center align-middle px-0"><a href="#"
-                                        class="shop-tooltip close float-none text-danger" title=""
-                                        data-original-title="Remove"><i class="bi bi-trash"></i></a></td>
-                            </tr>
+                                    </td>
+                                    <td class="text-right font-weight-semibold align-middle p-4">
+                                        &#8377 {{ $item->price }}
+                                    </td>
+
+                                    <td class="align-middle text-center p-4">{{ $item->qtys }}</td>
+                                    <td
+                                        class="text-right
+                                            font-weight-semibold align-middle p-4">
+                                        &#8377 {{ $item->price * $item->qtys }}
+                                    </td>
+                                    <td class="text-center align-middle px-0"><a
+                                            href="{{ url('/customer/remove/cart/' . $item->pid) }}"
+                                            class="shop-tooltip close float-none text-danger" title=""
+                                            data-original-title="Remove"><i class="bi bi-trash"></i></a></td>
+                                </tr>
+                            @endforeach
 
                         </tbody>
                     </table>
@@ -135,14 +96,32 @@
                         </div>
                         <div class="text-right mt-4">
                             <label class="text-muted font-weight-normal m-0">Total price</label>
-                            <div class="text-large"><strong>$1164.65</strong></div>
+                            @php
+                                $totalPrice = 0;
+
+                                foreach ($product as $item) {
+                                    $totalPrice = $totalPrice + $item->price * $item->qtys;
+                                }
+                            @endphp
+
+                            <div class="text-large"><strong>&#8377 {{ $totalPrice }}</strong></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="float-right">
-                    <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3"></button>
-                    <button type="button" class="btn btn-lg btn-primary mt-2">Checkout</button>
+                    <form action="{{ url('/customer/order/' . $product) }}" method="POST">
+                        @csrf
+                        <label for="method">Payment Method</label>
+                        <select name="method">
+                            <option value="">- Please Select -</option>
+                            <option value="internet">Internet Banking</option>
+                            <option value="card">Credit/Debit Card</option>
+                            <option value="cash">Cash</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                        <button type="submit" class="btn btn-lg btn-primary mt-2">Checkout</button>
+                    </form>
                 </div>
 
             </div>

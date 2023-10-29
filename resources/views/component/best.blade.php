@@ -11,14 +11,27 @@
             <div class="products">
                 <img style="width:12rem; height: 12rem" src="{{ asset('storage/' . $best->image) }}" alt="">
                 <hr>
-                <form action="">
+                <div>
                     <p style="font-size: 1.2rem" class="brand">{{ $best->brand }}</p>
                     <p>{{ $best->name }}</p>
-                    <p>Rs: {{ $best->price }} / <span>{{ $best->weight }}</span></p>
-                    <label for="qty">Qty</label>
-                    <input type="number" name="qty" id="qty" style="width:50px" min="1">
-                    <a href=""><button>Add</button></a>
-                </form>
+                    <p>&#8377 {{ $best->price }} / <span>{{ $best->weight }}</span></p>
+
+                    <div class="products-form">
+
+                        <form class="form1" action="{{ url('/customer/cart/' . $best->pid) }}" method="POST">
+                            @csrf
+                            <label for="qty">Qty:</label>
+                            <input type="number" min="1" name="qty" id="qty" style="width: 3rem;">
+                            <button type="submit" class="bi bi-cart"></button>
+                        </form>
+
+                        <form action="{{ url('/customer/wishlist/' . $best->pid) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="bi bi-heart"></button>
+                        </form>
+
+                    </div>
+                </div>
             </div>
         @endforeach
 
