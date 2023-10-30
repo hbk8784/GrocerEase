@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Models\Users;
+use App\Models\Orders;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 // use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -108,7 +112,40 @@ class AuthController extends Controller
     public function adminDash(Request $request){
 
         if(session('usersInfo')){
-            return view('Admin.admin-dash');
+
+            $customers = Users::where('role', 3)->get();
+            $sellers = Users::where('role', 2)->get();
+            $orders = DB::table('orders')
+            ->select('created_at')
+            ->groupby('created_at')
+            ->having(DB::raw('COUNT(*)'), '>', 1)
+            ->get();
+            $products = Products::all();
+
+            $allOrders = Orders::select('pid','order_status')->latest()->take(7)->get();
+            $pids = $allOrders->pluck('pid');
+
+            $allProducts = Products::whereIn('pid', $pids)->get();
+
+
+            $allProducts->map(function ($product) use ($allOrders) {
+                $matchingOrder = $allOrders->where('pid', $product->pid)->first();
+                if ($matchingOrder) {
+                    $product->order_status = $matchingOrder->order_status;
+                }
+                return $product;
+            });
+
+            $latestRecords = Products::latest()->take(4)->get();
+            $latestMembers =  Users::latest()->take(4)->get();
+
+             $productCount = count($products->toArray());
+             $customerCount = count($customers->toArray());
+             $sellerCount = count($sellers->toArray());
+             $orderCount = count($orders->toArray());
+
+
+            return view('Admin.admin-dash', compact('customerCount','sellerCount', 'orderCount', 'productCount', 'latestRecords', 'latestMembers', 'allOrders'));
          }
          else{
            return redirect('/login');

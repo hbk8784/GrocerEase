@@ -3,7 +3,7 @@
 
     <div class="info-box-content">
         <span class="info-box-text">Inventory</span>
-        <span class="info-box-number">5,200</span>
+        <span class="info-box-number">{{ $productCount }}</span>
     </div>
     <!-- /.info-box-content -->
 </div>

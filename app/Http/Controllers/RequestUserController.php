@@ -110,6 +110,8 @@ class RequestUserController extends Controller
 
            $detail->method = $request->method;
            $detail->save();
+
+           return redirect('/customer/order/history');
     }
 }
 
@@ -124,8 +126,25 @@ class RequestUserController extends Controller
             return view('order-history', compact('ordertime'));
   }
 
-  public function getInvoice(){
+  public function getInvoice($date){
 
+    $records = Orders::where('created_at', $date)->get();
+    $pids = $records->pluck('pid')->toArray();
+
+    $products = Products::whereIn('pid', $pids)->get();
+
+        return view('invoice', compact('records', 'products'));
+  }
+
+
+  public function trackOrder($date){
+
+    $records = Orders::where('created_at', $date)->get();
+    $pids = $records->pluck('pid')->toArray();
+
+    $products = Products::whereIn('pid', $pids)->get();
+
+        return view('current-order', compact('records', 'products'));
   }
 }
 

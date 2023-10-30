@@ -19,29 +19,27 @@ use App\Http\Controllers\OnLoad;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//common Routes-------------------------------------------------------------------------------
 Route::get('/', [OnLoad::class, 'load']);
-
-// Route::get('/', function(){
-//     return view('app');
-// });
-
-Route::view('/login', 'login');
-Route::post('/login', [AuthController::class, 'login']);
-
-
 Route::view('/register', 'signup');
 Route::post('/register', [AuthController::class, 'register']);
-
-Route::get('/admin/dashboard', [AuthController::class, 'adminDash'])->middleware('isLogin');
 Route::get('/logout', [AuthController::class, 'logOut']);
+Route::view('/login', 'login');
+Route::post('/login', [AuthController::class, 'login']);
+//--------------------------------------------------------------------------------------------
 
+//Admin Routes--------------------------------------------------------------------------------
+Route::prefix('admin')->middleware('isLogin')->group(function(){
+    Route::get('/dashboard', [AuthController::class, 'adminDash']);
+});
 
 
 //customer routes --------------------------------------------------------------------------
 Route::prefix('customer')->middleware('isLogin')->group(function(){
     Route::view('/profile', 'profile');
     Route::get('/order/history', [RequestUserController::class, 'orderHistory']);
-    Route::view('/order/current', 'current-order');
+    Route::get('/order/track/{date}', [RequestUserController::class, 'trackOrder']);
     Route::get('/wishlist', [RequestUserController::class, 'showWishList']);
     Route::post('/wishlist/{id}', [RequestUserController::class, 'Wishlist']);
     Route::get('/remove/wishlist/{id}', [RequestUserController::class, 'removeWishList']);
@@ -64,11 +62,3 @@ Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::view('/invoice', 'Seller.pages.invoice');
 });//--------------------------------------------------------------------------------------
 
-
-// Route::get('/invoice', function(){
-//     return view('invoice');
-// });
-
-Route::get('/payment', function(){
-    return view('payment');
-});

@@ -51,8 +51,8 @@
 
             <span>{{ @Session('usersInfo')['firstName'] }}</span><br>
             <a href="{{ url('/customer/profile') }}">Profile</a><br>
-            <a href="{{ url('/customer/order/current') }}">Orders</a><br>
-            <a href="{{ url('customer/order/history') }}">History</a><br>
+            {{-- <a href="{{ url('/customer/order/current') }}">Orders</a><br> --}}
+            <a href="{{ url('customer/order/history') }}">Orders</a><br>
             @if (@Session('usersInfo'))
                 <a href="{{ url('/logout') }}">Logout</a>
             @else

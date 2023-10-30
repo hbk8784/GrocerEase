@@ -51,11 +51,11 @@
                         <!-- Left col -->
                         <div class="col-md-8">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <!-- DIRECT CHAT -->
-                                    @include('Admin.modules.direct-chat')
-                                    <!--/.direct-chat -->
-                                </div>
+                                {{-- <div class="col-md-6"> --}}
+                                <!-- DIRECT CHAT -->
+                                {{-- @include('Admin.modules.direct-chat') --}}
+                                <!--/.direct-chat -->
+                                {{-- </div> --}}
                                 <!-- /.col -->
 
                                 <div class="col-md-6">
@@ -75,8 +75,8 @@
 
                         <div class="col-md-4">
                             <!-- Info Boxes Style 2 -->
-                            @include('Admin.modules.inventory')
-                            <!-- /.info-box -->
+                            {{-- @include('Admin.modules.inventory')
+                            <!-- /.info-box --> --}}
 
                             <!-- PRODUCT LIST -->
                             @include('Admin.modules.product-recent-add')

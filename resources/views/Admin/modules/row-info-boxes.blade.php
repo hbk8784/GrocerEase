@@ -6,8 +6,8 @@
             <div class="info-box-content">
                 <span class="info-box-text">Customers</span>
                 <span class="info-box-number">
-                    10
-                    <small>%</small>
+                    {{ $customerCount }}
+
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -21,7 +21,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Sellers</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">{{ $sellerCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -38,7 +38,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Orders</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">{{ $orderCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -50,8 +50,8 @@
             <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">Total Revenu</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">Inventory</span>
+                <span class="info-box-number">{{ $productCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>

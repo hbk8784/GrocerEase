@@ -22,11 +22,11 @@
     @include('component.profile-header')
     <div class="card">
         <div class="card-footer clearfix">
-            <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New
+            <a href="{{ url('/') }}" class="btn btn-sm btn-info float-left">Place New
                 Order</a>
         </div>
         <div class="card-header border-transparent">
-            <h3 class="card-title">Order History</h3>
+            <h3 class="card-title">Orders</h3>
 
         </div>
 
@@ -38,6 +38,7 @@
                         <tr>
                             <th>Order Date</th>
                             <th>Status</th>
+                            <th>Track</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,11 +46,11 @@
                         @foreach ($ordertime as $time)
                             <tr>
                                 <td><a
-                                        href="{{ url('/customer//invoice/' . $time->created_at) }}">{{ $time->created_at }}</a>
+                                        href="{{ url('/customer/invoice/' . $time->created_at) }}">{{ $time->created_at }}</a>
                                     ...Click for Invoice</td>
                                 <td>
                                     @if ($time->order_status == 1)
-                                        <span class="badge badge-warning">Ordered</span>
+                                        <span class="badge badge-warning">Processing</span>
                                     @elseif ($time->order_status == 2)
                                         <span class="badge badge-info">Shipped</span>
                                     @elseif ($time->order_status == 3)
@@ -58,6 +59,7 @@
                                         <span class="badge badge-success">Delivered</span>
                                     @endif
                                 </td>
+                                <td><a href="{{ url('/customer/order/track/' . $time->created_at) }}">Click</a></td>
                             </tr>
                         @endforeach
 

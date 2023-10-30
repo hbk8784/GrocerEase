@@ -83,3 +83,6 @@ table th, table td {
 .float-right{
     float: right;
 }
+.hide-me{
+    display: none;
+}

@@ -99,65 +99,17 @@
 
                 </li>
                 <li class="nav-header">OPTIONS</li>
-                <li class="nav-item">
-                    <a href="{{ asset('admin/pages/calendar.htm') }}l" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
-                        <p>
-                            Calendar
-                            <span class="badge badge-info right">2</span>
-                        </p>
-                    </a>
-                </li>
+
+
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-envelope"></i>
-                        <p>
-                            Mailbox
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ asset('admin/pages/mailbox/mailbox.html') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inbox</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ asset('admin/pages/mailbox/compose.html') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Compose</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ asset('admin/pages/mailbox/read-mail.html') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Read</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                <li class="nav-item">
-                    <a href="{{ asset('admin/pages/examples/invoice.html') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Invoices</p>
-                    </a>
-                </li>
-
                 <li class="nav-item">
                     <a href="{{ asset('admin/pages/examples/profile.html') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Customer Profile</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="pages/examples/e-commerce.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>GrocerEase</p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="{{ asset('admin/pages/examples/projects.html') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
@@ -165,22 +117,18 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ asset('admin/pages/examples/project-edit.html') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Product Edit</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{ asset('admin/pages/examples/project-detail.html') }}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Products Detail</p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="{{ asset('admin/pages/examples/contacts.html') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Sellers</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ asset('admin/pages/examples/contacts.html') }}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Manage Account</p>
                     </a>
                 </li>
                 </li>
