@@ -17,22 +17,28 @@
             <table class="table m-0">
                 <thead>
                     <tr>
-                        <th>Order ID</th>
+                        <th>ID</th>
                         <th>Item</th>
                         <th>Status</th>
-                        <th>Popularity</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($allOrders as $order)
+                    @foreach ($dashProduct as $dp)
                         <tr>
-                            <td><a href="{{ asset('storage/' . $order->image) }}">OR9842</a>
+                            <td><a>{{ $dp->pid }}</a>
                             </td>
-                            <td>Call of Duty IV</td>
-                            <td><span class="badge badge-success">Shipped</span></td>
+                            <td>{{ $dp->name }}</td>
                             <td>
-                                <div class="sparkbar" data-color="#00a65a" data-height="20">
-                                    90,80,90,-70,61,-83,63</div>
+                                @if ($dp->order_status == 1)
+                                    <span class="badge badge-warning">Processing</span>
+                                @elseif ($dp->order_status == 2)
+                                    <span class="badge badge-info">Shipped</span>
+                                @elseif ($dp->order_status == 3)
+                                    <span class="badge badge-secondary">On the way</span>
+                                @else
+                                    <span class="badge badge-success">Delivered</span>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

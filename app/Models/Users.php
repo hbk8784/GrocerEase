@@ -11,4 +11,9 @@ class Users extends Model
 
     protected $table = 'users';
     protected $primaryKey = "id";
+
+    protected $fillable = [
+        'active', // Add any other fields you want to allow for mass assignment here
+    ];
+
 }

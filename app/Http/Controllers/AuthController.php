@@ -125,10 +125,9 @@ class AuthController extends Controller
             $allOrders = Orders::select('pid','order_status')->latest()->take(7)->get();
             $pids = $allOrders->pluck('pid');
 
-            $allProducts = Products::whereIn('pid', $pids)->get();
+            $dashProduct = Products::whereIn('pid', $pids)->get();
 
-
-            $allProducts->map(function ($product) use ($allOrders) {
+            $dashProduct->map(function ($product) use ($allOrders) {
                 $matchingOrder = $allOrders->where('pid', $product->pid)->first();
                 if ($matchingOrder) {
                     $product->order_status = $matchingOrder->order_status;
@@ -145,7 +144,7 @@ class AuthController extends Controller
              $orderCount = count($orders->toArray());
 
 
-            return view('Admin.admin-dash', compact('customerCount','sellerCount', 'orderCount', 'productCount', 'latestRecords', 'latestMembers', 'allOrders'));
+            return view('Admin.admin-dash', compact('customerCount','sellerCount', 'orderCount', 'productCount', 'latestRecords', 'latestMembers', 'allOrders', 'dashProduct'));
          }
          else{
            return redirect('/login');
@@ -175,6 +174,64 @@ class AuthController extends Controller
          }
 
      }
+
+     public function customerProfile(){
+
+        $profiles = Users::where('role', '=', 3)->get();
+
+        return view('Admin.pages.examples.customer-profile', compact('profiles'));
+     }
+
+     public function deactivate($id){
+
+           $active = Users::find($id);
+           $active->update(['active'=> 0]);
+
+           return redirect('/admin/customer/profile');
+     }
+
+     public function activate($id){
+
+        $active = Users::find($id);
+        $active->update(['active'=> 1]);
+
+        return redirect('/admin/customer/profile');
+
+     }
+
+     public function products(){
+
+        $sellerProduct = Products::all();
+
+        return view('Admin.pages.examples.projects', compact('sellerProduct'));
+     }
+
+     public function sellerProfile(){
+
+          $sellerProfile = Users::where('role', '=', 2)->get();
+
+          return view('Admin.pages.examples.seller-profile', compact('sellerProfile'));
+
+     }
+
+     public function sdeactivate($id){
+
+        $active = Users::find($id);
+        $active->update(['active'=> 0]);
+
+        return redirect('/admin/seller/profile');
+  }
+
+  public function sactivate($id){
+
+     $active = Users::find($id);
+     $active->update(['active'=> 1]);
+
+     return redirect('/admin/seller/profile');
+
+  }
 }
+
+
 
 //-------------------------------------------------------------------------------------------------

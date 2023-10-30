@@ -32,6 +32,13 @@ Route::post('/login', [AuthController::class, 'login']);
 //Admin Routes--------------------------------------------------------------------------------
 Route::prefix('admin')->middleware('isLogin')->group(function(){
     Route::get('/dashboard', [AuthController::class, 'adminDash']);
+    Route::get('/customer/profile', [AuthController::class, 'customerProfile']);
+    Route::get('/customer/profile/deactivate/{id}', [AuthController::class, 'deactivate']);
+    Route::get('/customer/profile/activate/{id}', [AuthController::class, 'activate']);
+    Route::get('/seller/profile', [AuthController::class, 'sellerProfile']);
+    Route::get('/seller/profile/deactivate/{id}', [AuthController::class, 'sdeactivate']);
+    Route::get('/seller/profile/activate/{id}', [AuthController::class, 'sactivate']);
+    Route::get('/seller/products', [AuthController::class, 'products']);
 });
 
 
