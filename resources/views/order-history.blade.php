@@ -36,18 +36,18 @@
                 <table class="table m-0">
                     <thead>
                         <tr>
-                            <th>Order Date</th>
+                            <th>Order Invoice</th>
                             <th>Status</th>
                             <th>Track</th>
                         </tr>
                     </thead>
                     <tbody>
 
-                        @foreach ($ordertime as $time)
+                        @foreach ($re7_ordertime as $time)
                             <tr>
                                 <td><a
-                                        href="{{ url('/customer/invoice/' . $time->created_at) }}">{{ $time->created_at }}</a>
-                                    ...Click for Invoice</td>
+                                        href="{{ url('/customer/invoice/' . $time->created_at) }}">{{ \Carbon\Carbon::parse($time->created_at)->format('j F, Y ') }}</a><span>Invoice</span>
+                                </td>
                                 <td>
                                     @if ($time->order_status == 1)
                                         <span class="badge badge-warning">Processing</span>
@@ -59,7 +59,7 @@
                                         <span class="badge badge-success">Delivered</span>
                                     @endif
                                 </td>
-                                <td><a href="{{ url('/customer/order/track/' . $time->created_at) }}">Click</a></td>
+                                <td><a href="{{ url('/customer/order/track/' . $time->created_at) }}">Check</a></td>
                             </tr>
                         @endforeach
 

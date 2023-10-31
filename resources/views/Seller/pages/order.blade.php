@@ -42,42 +42,42 @@
                                 <div class="row mt-5">
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="o-cards">
-                                            <h5 class="txt-o-placed">Order Placed</h5>
+                                            <h5 class="txt-o-placed">Processing</h5>
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4">
                                                     <div id="o-progress-order-placed" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
                                                     <h4>2215</h4>
-                                                    <h6>Today's Order</h6>
+                                                    <h6>Pending Orders</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="o-cards">
-                                            <h5 class="txt-o-preparing">Preparing</h5>
+                                            <h5 class="txt-o-preparing">Shipped</h5>
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4">
                                                     <div id="o-progress-preparing" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
                                                     <h4>1344</h4>
-                                                    <h6>In Process</h6>
+                                                    <h6>In Transit</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="o-cards">
-                                            <h5 class="txt-o-shipped">Shipped</h5>
+                                            <h5 class="txt-o-shipped">On the Way</h5>
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4">
                                                     <div id="o-progress-shipped" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
                                                     <h4>924</h4>
-                                                    <h6>Shipped Today</h6>
+                                                    <h6>Out For Devlivery</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
                                                     <h4>768</h4>
-                                                    <h6>Delivered Today</h6>
+                                                    <h6>Delivered To Customer</h6>
                                                 </div>
                                             </div>
                                         </div>

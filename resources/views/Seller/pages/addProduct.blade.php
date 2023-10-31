@@ -85,7 +85,7 @@
                                                                         name="maincat">
                                                                         <option value="">Select Category
                                                                         </option>
-                                                                        <option value="sweets">Sweets</option>
+
                                                                         <option value="sanck">Sanck</option>
                                                                         <option value="beverages">Beverages</option>
                                                                         <option value="fruits vegetables">Fruits &
@@ -94,7 +94,7 @@
 
                                                                         <option value="beauty hygiene">Beauty & Hygiene
                                                                         </option>
-                                                                        <option value="fruits vegetables">Home &
+                                                                        <option value="home kitchen">Home &
                                                                             Kitchen
                                                                         </option>
                                                                         <option value="cleaning household">Cleaning &

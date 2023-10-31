@@ -86,7 +86,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($sellerProduct as $product)
+                                @foreach ($au_sellerProduct as $product)
                                     <tr>
                                         <td>
                                             {{ $product->pid }}

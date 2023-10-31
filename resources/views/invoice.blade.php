@@ -32,7 +32,8 @@
                 <div class="col-6">
                     <h2 class="heading">Invoice No:- {{ @Session('usersInfo')['id'] }}</h2>
                     <p class="sub-heading">Tracking No:- {{ $rand }} </p>
-                    <p class="sub-heading">Order Date:- {{ $records[0]->created_at }} </p>
+                    <p class="sub-heading">Order Date:-
+                        {{ \Carbon\Carbon::parse($records[0]->created_at)->format('j F, Y ') }} </p>
                     <p class="sub-heading">Email Address:- {{ @Session('usersInfo')['email'] }} </p>
                 </div>
                 <div class="col-6">

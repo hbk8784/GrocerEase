@@ -4,7 +4,7 @@
 
     <section class="ad-fit">
 
-        @foreach ($hero as $item)
+        @foreach ($on_hero as $item)
             <div class="ad1">
                 <img src="{{ asset('storage/' . $item->image) }}" alt="juice-box">
                 <div class="ad1-desc">

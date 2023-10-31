@@ -6,7 +6,7 @@
             <div class="info-box-content">
                 <span class="info-box-text">Customers</span>
                 <span class="info-box-number">
-                    {{ $customerCount }}
+                    {{ $au_customerCount }}
 
                 </span>
             </div>
@@ -21,7 +21,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Sellers</span>
-                <span class="info-box-number">{{ $sellerCount }}</span>
+                <span class="info-box-number">{{ $au_sellerCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -38,7 +38,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Orders</span>
-                <span class="info-box-number">{{ $orderCount }}</span>
+                <span class="info-box-number">{{ $au_orderCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -51,7 +51,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Inventory</span>
-                <span class="info-box-number">{{ $productCount }}</span>
+                <span class="info-box-number">{{ $au_productCount }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>

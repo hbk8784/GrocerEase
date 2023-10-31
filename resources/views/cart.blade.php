@@ -43,7 +43,7 @@
                         </thead>
                         <tbody>
 
-                            @foreach ($product as $item)
+                            @foreach ($re5_product as $item)
                                 <tr>
                                     <td class="p-4">
                                         <div class="media align-items-center">
@@ -99,7 +99,7 @@
                             @php
                                 $totalPrice = 0;
 
-                                foreach ($product as $item) {
+                                foreach ($re5_product as $item) {
                                     $totalPrice = $totalPrice + $item->price * $item->qtys;
                                 }
                             @endphp
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="float-right">
-                    <form action="{{ url('/customer/order/' . $product) }}" method="POST">
+                    <form action="{{ url('/customer/order') }}" method="POST">
                         @csrf
                         <label for="method">Payment Method</label>
                         <select name="method">
@@ -120,6 +120,7 @@
                             <option value="cash">Cash</option>
                             <option value="paypal">PayPal</option>
                         </select>
+                        <input type="hidden" name="data" value="{{ @json_encode($re5_product) }}">
                         <button type="submit" class="btn btn-lg btn-primary mt-2">Checkout</button>
                     </form>
                 </div>

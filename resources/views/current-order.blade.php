@@ -29,7 +29,7 @@
                             <div class="row">
                                 <div class="col mb-3">
                                     <p class="small text-muted mb-1">Date</p>
-                                    <p>{{ $records[0]->created_at }}</p>
+                                    <p>{{ \Carbon\Carbon::parse($records[0]->created_at)->format('j F, Y ') }}</p>
                                 </div>
                                 <div class="col mb-3">
                                     <p class="small text-muted mb-1">Order No.</p>

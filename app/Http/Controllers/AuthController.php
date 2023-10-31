@@ -113,38 +113,38 @@ class AuthController extends Controller
 
         if(session('usersInfo')){
 
-            $customers = Users::where('role', 3)->get();
-            $sellers = Users::where('role', 2)->get();
-            $orders = DB::table('orders')
+            $au_customers = Users::where('role', 3)->get();
+            $au_sellers = Users::where('role', 2)->get();
+            $au_orders = DB::table('orders')
             ->select('created_at')
             ->groupby('created_at')
             ->having(DB::raw('COUNT(*)'), '>', 1)
             ->get();
-            $products = Products::all();
+            $au_products = Products::all();
 
-            $allOrders = Orders::select('pid','order_status')->latest()->take(7)->get();
-            $pids = $allOrders->pluck('pid');
+            $au_allOrders = Orders::select('pid','order_status')->latest()->take(7)->get();
+            $au_pids = $au_allOrders->pluck('pid');
 
-            $dashProduct = Products::whereIn('pid', $pids)->get();
+            $au_dashProduct = Products::whereIn('pid', $au_pids)->get();
 
-            $dashProduct->map(function ($product) use ($allOrders) {
-                $matchingOrder = $allOrders->where('pid', $product->pid)->first();
+            $au_dashProduct->map(function ($product) use ($au_allOrders) {
+                $matchingOrder = $au_allOrders->where('pid', $product->pid)->first();
                 if ($matchingOrder) {
                     $product->order_status = $matchingOrder->order_status;
                 }
                 return $product;
             });
 
-            $latestRecords = Products::latest()->take(4)->get();
-            $latestMembers =  Users::latest()->take(4)->get();
+            $au_latestRecords = Products::latest()->take(4)->get();
+            $au_latestMembers =  Users::latest()->take(4)->get();
 
-             $productCount = count($products->toArray());
-             $customerCount = count($customers->toArray());
-             $sellerCount = count($sellers->toArray());
-             $orderCount = count($orders->toArray());
+             $au_productCount = count($au_products->toArray());
+             $au_customerCount = count($au_customers->toArray());
+             $au_sellerCount = count($au_sellers->toArray());
+             $au_orderCount = count($au_orders->toArray());
 
 
-            return view('Admin.admin-dash', compact('customerCount','sellerCount', 'orderCount', 'productCount', 'latestRecords', 'latestMembers', 'allOrders', 'dashProduct'));
+            return view('Admin.admin-dash', compact('au_customerCount','au_sellerCount', 'au_orderCount', 'au_productCount', 'au_latestRecords', 'au_latestMembers', 'au_allOrders', 'au_dashProduct'));
          }
          else{
            return redirect('/login');
@@ -167,6 +167,10 @@ class AuthController extends Controller
      public function sellerDash(){
 
         if(session('usersInfo')){
+
+        //   $s1_orders = Orders::where('sid',session('usersInfo')['id'])->get();
+        //   dd($s1_orders);
+
             return view('Seller.seller-dash');
          }
          else{
@@ -177,23 +181,23 @@ class AuthController extends Controller
 
      public function customerProfile(){
 
-        $profiles = Users::where('role', '=', 3)->get();
+        $au_profiles = Users::where('role', '=', 3)->get();
 
-        return view('Admin.pages.examples.customer-profile', compact('profiles'));
+        return view('Admin.pages.examples.customer-profile', compact('au_profiles'));
      }
 
      public function deactivate($id){
 
-           $active = Users::find($id);
-           $active->update(['active'=> 0]);
+           $au_active = Users::find($id);
+           $au_active->update(['active'=> 0]);
 
            return redirect('/admin/customer/profile');
      }
 
      public function activate($id){
 
-        $active = Users::find($id);
-        $active->update(['active'=> 1]);
+        $au_active = Users::find($id);
+        $au_active->update(['active'=> 1]);
 
         return redirect('/admin/customer/profile');
 
@@ -201,31 +205,31 @@ class AuthController extends Controller
 
      public function products(){
 
-        $sellerProduct = Products::all();
+        $au_sellerProduct = Products::all();
 
-        return view('Admin.pages.examples.projects', compact('sellerProduct'));
+        return view('Admin.pages.examples.projects', compact('au_sellerProduct'));
      }
 
      public function sellerProfile(){
 
-          $sellerProfile = Users::where('role', '=', 2)->get();
+          $au_sellerProfile = Users::where('role', '=', 2)->get();
 
-          return view('Admin.pages.examples.seller-profile', compact('sellerProfile'));
+          return view('Admin.pages.examples.seller-profile', compact('au_sellerProfile'));
 
      }
 
      public function sdeactivate($id){
 
-        $active = Users::find($id);
-        $active->update(['active'=> 0]);
+        $au_active = Users::find($id);
+        $au_active->update(['active'=> 0]);
 
         return redirect('/admin/seller/profile');
   }
 
   public function sactivate($id){
 
-     $active = Users::find($id);
-     $active->update(['active'=> 1]);
+     $au_active = Users::find($id);
+     $au_active->update(['active'=> 1]);
 
      return redirect('/admin/seller/profile');
 

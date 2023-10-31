@@ -6,6 +6,7 @@ use App\Http\Controllers\SellerController;
 use App\Models\Users;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\RequestUserController;
+use App\Http\Controllers\SearchProductController;
 use App\Http\Middleware\AuthCheck;
 use App\Http\Controllers\OnLoad;
 
@@ -27,6 +28,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logOut']);
 Route::view('/login', 'login');
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/products/{query}', [SearchProductController::class, 'productResult']);
+Route::get('/products/sub/{query}', [SearchProductController::class, 'subCatSearch']);
+
 //--------------------------------------------------------------------------------------------
 
 //Admin Routes--------------------------------------------------------------------------------
@@ -53,7 +57,7 @@ Route::prefix('customer')->middleware('isLogin')->group(function(){
     Route::post('/cart/{id}', [RequestUserController::class, 'cart']);
     Route::get('/cart', [RequestUserController::class, 'showCart']);
     Route::get('/remove/cart/{id}', [RequestUserController::class, 'removeCart']);
-    Route::post('/order/{data}', [RequestUserController::class, 'setOrder']);
+    Route::post('/order', [RequestUserController::class, 'setOrder']);
     Route::get('/invoice/{date}', [RequestUserController::class, 'getInvoice']);
 }); //-------------------------------------------------------------------------------------
 

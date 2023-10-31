@@ -3,7 +3,7 @@
         <h3 class="card-title">Latest Members</h3>
 
         <div class="card-tools">
-            <span class="badge badge-danger">{{ @count($latestMembers->toArray()) }} New Members</span>
+            <span class="badge badge-danger">{{ @count($au_latestMembers->toArray()) }} New Members</span>
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                 <i class="fas fa-minus"></i>
             </button>
@@ -15,7 +15,7 @@
     <!-- /.card-header -->
     <div class="card-body p-0">
         <ul class="users-list clearfix">
-            @foreach ($latestMembers as $latest)
+            @foreach ($au_latestMembers as $latest)
                 <li>
                     <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="User Image"
                         style="width: 3rem; height: 3rem;">

@@ -16,13 +16,13 @@
             <div class="catagory-container">
                 <select name="catagory" class="catagory">
                     <option value="all">ALL CATEGORIES</option>
-                    <option value="breads-sweets">Sweets</option>
-                    <option value="coffees-teas">Snacks</option>
-                    <option value="food-cupboard">Beverages</option>
-                    <option value="frozen-seafoods">Fruits & Vegetables</option>
+                    <option value="home kitchen">Home & kitchen</option>
+                    <option value="snak">Snacks</option>
+                    <option value="baverages">Beverages</option>
+                    <option value="fruits vegetables">Fruits & Vegetables</option>
 
-                    <option value="milk-daries">Beauty & Hygiene</option>
-                    <option value="pet-foods">Cleaning & Household</option>
+                    <option value="beauty hygiene">Beauty & Hygiene</option>
+                    <option value="cleaning household">Cleaning & Household</option>
                 </select>
             </div>
 
@@ -78,18 +78,27 @@
         </div>
     </div>
     <br>
+    @php
+        $homeKitchen = 'home kitchen';
+        $sanck = 'sanck';
+        $beverages = 'beverages';
+        $fandv = 'fruits vegetables';
+        $bandh = 'beauty hygiene';
+        $candh = 'cleaning household';
+    @endphp
     <ul class="option" id="option">
-        <li><a href="">Sweets</a></li>
+
+        <li><a href="{{ url('products/' . $sanck) }}">Snack</a></li>
         <hr>
-        <li><a href="">Snack</a></li>
+        <li><a href="{{ url('products/' . $beverages) }}">Beverages</a></li>
         <hr>
-        <li><a href="">Beverages</a></li>
+        <li><a href="{{ url('products/' . $fandv) }}">Fruites & Vegetables</a></li>
         <hr>
-        <li><a href="">Fruites & Vegetables</a></li>
+        <li><a href="{{ url('products/' . $bandh) }}">Beauty & Hygiene</a></li>
         <hr>
-        <li><a href="">Beauty & Hygiene</a></li>
+        <li><a href="{{ url('products/' . $homeKitchen) }}">Home & kitchen</a></li>
         <hr>
-        <li><a href="">Cleaning & Household</a></li>
+        <li><a href="{{ url('products/' . $candh) }}">Cleaning & Household</a></li>
     </ul>
 
 </div>

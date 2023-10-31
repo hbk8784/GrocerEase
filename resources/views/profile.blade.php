@@ -27,7 +27,7 @@
                     <tbody>
                         <tr>
                             <td>Registered:</td>
-                            <td>{{ @Session('usersInfo')['created_at'] }}</td>
+                            <td>{{ \Carbon\Carbon::parse(@Session('usersInfo')['created_at'])->format('j F, Y ') }}</td>
                         </tr>
                         <tr>
                             <td>Role:</td>

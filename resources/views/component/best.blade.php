@@ -7,7 +7,7 @@
 
     <div class="products-container">
 
-        @foreach ($bestSeller as $best)
+        @foreach ($on_bestSeller as $best)
             <div class="products">
                 <img style="width:12rem; height: 12rem" src="{{ asset('storage/' . $best->image) }}" alt="">
                 <hr>

@@ -14,7 +14,7 @@
     <!-- /.card-header -->
     <div class="card-body p-0">
         <ul class="products-list product-list-in-card pl-2 pr-2">
-            @foreach ($latestRecords as $latest)
+            @foreach ($au_latestRecords as $latest)
                 <li class="item">
                     <div class="product-img">
                         <img src="{{ asset('storage/' . $latest->image) }}" alt="Product Image" class="img-size-50">

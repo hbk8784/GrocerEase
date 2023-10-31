@@ -34,7 +34,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
+                                @foreach ($re2_products as $product)
                                     <tr>
                                         <td width="45%">
                                             <div class="display-flex align-center">

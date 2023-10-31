@@ -44,139 +44,29 @@
 
     <section class="products-container">
 
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
+        @foreach ($searchProduct as $product)
+            <div class="products-img-detail">
+                <img style="width:12rem; height: 12rem" src="{{ asset('storage/' . $product->image) }}" alt="">
+                <hr>
+                <p style="font-size: 1.2rem; color: rgb(0, 0, 0, 0.5);">{{ $product->brand }}</p>
+                <p>{{ $product->name }}</p>
+                <p>&#8377 {{ $product->price }} / <span>{{ $product->weight }}</span></p>
 
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
+                <div class="add-to-cart">
+                    <form class="form1" action="{{ url('/customer/cart/' . $product->pid) }}" method="POST">
+                        @csrf
+                        <label for="qty">Qty:</label>
+                        <input type="number" min="1" name="qty" id="qty" style="width: 3rem;">
+                        <button type="submit" class="bi bi-cart"></button>
+                    </form>
 
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
+                    <form action="{{ url('/customer/wishlist/' . $product->pid) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="bi bi-heart"></button>
+                    </form>
+                </div>
+
             </div>
-
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
-        <div class="products-img-detail">
-            <img src="https://picsum.photos/200/200" alt="">
-
-            <p>Name</p>
-            <p>Quantity</p>
-            <p>price</p>
-            <div class="add-to-cart">
-                <input type="number"><br>
-                <button>Add to cart </button>
-            </div>
-        </div>
-
+        @endforeach
     </section>
 </section>

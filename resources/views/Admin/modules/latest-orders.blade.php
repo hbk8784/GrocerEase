@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($dashProduct as $dp)
+                    @foreach ($au_dashProduct as $dp)
                         <tr>
                             <td><a>{{ $dp->pid }}</a>
                             </td>
