@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Products;
+use App\Models\Orders;
 
 class SellerController extends Controller
 {
@@ -51,6 +52,32 @@ class SellerController extends Controller
 
         $products = Products::where('sid','=', Session('usersInfo')['id'])->get();
              return view('Seller.pages.products', compact('products'));
+
+    }
+
+    public function orderToSeller(){
+
+        $orderToSeller = Orders::where('sid', session('usersInfo')['id'])->get();
+
+         return view('Seller.pages.order', compact('orderToSeller'));
+    }
+
+    public function orderStatusUpdate(Request $request){
+
+
+        $changeStatus = Orders::find($request['id']);
+
+        $changeStatus->update(['order_status' => (int)$request['status']]);
+        $changeStatus->save();
+
+        return redirect('/seller/orders');
+    }
+
+    public function viewPayment(){
+
+        $viewPayment = Orders::where('sid', session('usersInfo')['id'])->get();
+
+        return view('Seller.pages.viewPayments', compact('viewPayment'));
 
     }
 }

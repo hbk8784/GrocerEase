@@ -19,4 +19,9 @@ class Orders extends Model
     // public function products() {
     //     return $this->belongsTo(Products::class, 'pid');
     // }
+
+    protected $fillable = [
+        'order_status', // Add any other fields you want to allow for mass assignment here
+    ];
+
 }

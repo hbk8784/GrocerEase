@@ -35,6 +35,25 @@
             <div class="container">
                 <h3 style="color: white;">View Payments</h3>
 
+                @php
+                    $internet = 0;
+                    $card = 0;
+                    $cash = 0;
+                    $upi = 0;
+
+                    foreach ($viewPayment as $vp) {
+                        if ($vp->method == 'internet') {
+                            $internet = $internet + $vp->price * $vp->oqty;
+                        } elseif ($vp->method == 'card') {
+                            $card = $card + $vp->price * $vp->oqty;
+                        } elseif ($vp->method == 'cash') {
+                            $cash = $cash + $vp->price * $vp->oqty;
+                        } elseif ($vp->method == 'paypal') {
+                            $upi = $upi + $vp->price * $vp->oqty;
+                        }
+                    }
+                @endphp
+
                 <div class="row" id="cancel-row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 layout-spacing text-center">
                         <div class="payment-top-section">
@@ -44,28 +63,28 @@
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="p-cards">
                                             <i class="bi bi-globe" style="color: rgb(36, 62, 191)"></i>
-                                            <h5>$9754</h5>
+                                            <h5>&#8377 {{ $internet }}</h5>
                                             <h5 class="txt-net-bnk">Internet Banking</h5>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="p-cards">
                                             <i class="bi bi-credit-card-fill" style="color: rgb(27, 161, 49)"></i>
-                                            <h5>$17341</h5>
+                                            <h5>&#8377 {{ $card }}</h5>
                                             <h5 class="txt-c-d-card">Credit/Debit Card</h5>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="p-cards">
                                             <i class="bi bi-cash" style="color: rgb(171, 69, 69)"></i>
-                                            <h5>$7194</h5>
+                                            <h5>&#8377 {{ $cash }}</h5>
                                             <h5 class="txt-cash">Cash</h5>
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="p-cards">
                                             <i class="bi bi-paypal" style="color:orange"></i>
-                                            <h5>$6452</h5>
+                                            <h5>&#8377 {{ $upi }}</h5>
                                             <h5 class="txt-paypal">UPI</h5>
                                         </div>
                                     </div>
@@ -89,94 +108,31 @@
                                         <thead>
                                             <tr>
                                                 <th>Report Date</th>
-                                                <th>Merchant Account</th>
-                                                <th>Transaction ID</th>
+                                                <th>Payment Method</th>
+
                                                 <th>Invoice ID</th>
-                                                <th>Referral ID</th>
+
                                                 <th>Total Amount</th>
-                                                <th>Shipping Fees</th>
+                                                <th>Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>05/25/2018</td>
-                                                <td>Guest</td>
-                                                <td>000000901</td>
-                                                <td>110004</td>
-                                                <td>1005e</td>
-                                                <td>$325</td>
-                                                <td>$7</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/26/2018</td>
-                                                <td>Premium User</td>
-                                                <td>000000902</td>
-                                                <td>110029</td>
-                                                <td>ff394t</td>
-                                                <td>$1044</td>
-                                                <td>$20</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/29/2018</td>
-                                                <td>Guest</td>
-                                                <td>000000910</td>
-                                                <td>110032</td>
-                                                <td>eaee93</td>
-                                                <td>$560</td>
-                                                <td>$10</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/29/2018</td>
-                                                <td>Guest</td>
-                                                <td>000000912</td>
-                                                <td>110033</td>
-                                                <td>e4073f</td>
-                                                <td>$3409</td>
-                                                <td>$25</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/30/2018</td>
-                                                <td>Premium User</td>
-                                                <td>000000916</td>
-                                                <td>110040</td>
-                                                <td>a1ad27</td>
-                                                <td>$2260</td>
-                                                <td>$15</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/30/2018</td>
-                                                <td>New User</td>
-                                                <td>000000919</td>
-                                                <td>110041</td>
-                                                <td>y77ed0</td>
-                                                <td>$4555</td>
-                                                <td>$22</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/03/2018</td>
-                                                <td>New User</td>
-                                                <td>000000920</td>
-                                                <td>110042</td>
-                                                <td>y77ed7</td>
-                                                <td>$2255</td>
-                                                <td>$25</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>05/05/2018</td>
-                                                <td>New User</td>
-                                                <td>000000921</td>
-                                                <td>110043</td>
-                                                <td>y77ed8</td>
-                                                <td>$2275</td>
-                                                <td>$26</td>
-                                            </tr>
+                                            @foreach ($viewPayment as $vip)
+                                                <tr>
+                                                    <td>{{ \Carbon\Carbon::parse($vip->created_at)->format('j F, Y ') }}
+                                                    </td>
+                                                    <td>{{ $vip->method }}</td>
+                                                    <td>{{ $vip->id }}</td>
+                                                    <td>&#8377 {{ $vip->price * $vip->oqty }}</td>
+                                                    <td>
+                                                        @if ($vip->payment_status == 1)
+                                                            Paid
+                                                        @else
+                                                            Not Paid
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -202,28 +158,7 @@
     <script src="plugins/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/js/app.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            App.init();
-        });
-    </script>
-    <script src="assets/js/custom.js"></script>
-    <!-- END GLOBAL MANDATORY STYLES -->
 
-    <!--  BEGIN CUSTOM SCRIPT FILES  -->
-    <script src="plugins/table/datatable/datatables.js"></script>
-    <script>
-        $('#ecommerce-product-view').DataTable({
-            "lengthMenu": [5, 10, 20, 50, 100],
-            "language": {
-                "paginate": {
-                    "previous": "<i class='flaticon-arrow-left-1'></i>",
-                    "next": "<i class='flaticon-arrow-right'></i>"
-                },
-                "info": "Showing page _PAGE_ of _PAGES_"
-            }
-        });
-    </script>
     <!--  END CUSTOM SCRIPT FILES  -->
 </body>
 

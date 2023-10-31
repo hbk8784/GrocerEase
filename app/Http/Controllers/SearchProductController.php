@@ -21,4 +21,5 @@ class SearchProductController extends Controller
 
          return view('products', compact('searchProduct'));
     }
+
 }

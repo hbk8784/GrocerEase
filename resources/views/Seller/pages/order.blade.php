@@ -42,13 +42,31 @@
                                 <div class="row mt-5">
                                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12 mb-5">
                                         <div class="o-cards">
+                                            @php
+                                                $processing = 0;
+                                                $shiped = 0;
+                                                $ontheway = 0;
+                                                $delivered = 0;
+
+                                                foreach ($orderToSeller as $mod) {
+                                                    if ($mod->order_status == 1) {
+                                                        $processing++;
+                                                    } elseif ($mod->order_status == 2) {
+                                                        $shiped++;
+                                                    } elseif ($mod->order_status == 3) {
+                                                        $ontheway++;
+                                                    } elseif ($mod->order_status == 4) {
+                                                        $delivered++;
+                                                    }
+                                                }
+                                            @endphp
                                             <h5 class="txt-o-placed">Processing</h5>
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4">
                                                     <div id="o-progress-order-placed" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
-                                                    <h4>2215</h4>
+                                                    <h4>{{ $processing }}</h4>
                                                     <h6>Pending Orders</h6>
                                                 </div>
                                             </div>
@@ -62,7 +80,7 @@
                                                     <div id="o-progress-preparing" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
-                                                    <h4>1344</h4>
+                                                    <h4>{{ $shiped }}</h4>
                                                     <h6>In Transit</h6>
                                                 </div>
                                             </div>
@@ -76,7 +94,7 @@
                                                     <div id="o-progress-shipped" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
-                                                    <h4>924</h4>
+                                                    <h4>{{ $ontheway }}</h4>
                                                     <h6>Out For Devlivery</h6>
                                                 </div>
                                             </div>
@@ -90,7 +108,7 @@
                                                     <div id="o-progress-delivered" class=""></div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-6 col-6 mt-4 text-right">
-                                                    <h4>768</h4>
+                                                    <h4>{{ $delivered }}</h4>
                                                     <h6>Delivered To Customer</h6>
                                                 </div>
                                             </div>
@@ -115,186 +133,61 @@
                                     <table id="ecommerce-order-list" class="table table-hover table-bordered">
                                         <thead>
                                             <tr>
-                                                <th class="checkbox-column"> Record No. </th>
-                                                <th>Order</th>
+
+                                                <th>Order ID</th>
                                                 <th>Purchased On</th>
-                                                <th>Vendor</th>
+                                                <th>Brand</th>
                                                 <th>Ship To</th>
-                                                <th>Base Price</th>
-                                                <th>Purchased Price</th>
+                                                <th>Price</th>
+                                                <th>Qty</th>
+                                                <th>Total Price</th>
                                                 <th class="align-center">Status</th>
                                                 <th class="align-center">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($orderToSeller as $ots)
+                                            @endforeach
                                             <tr>
-                                                <td class="checkbox-column"> 1 </td>
-                                                <td>1</td>
-                                                <td>12/09/2017</td>
-                                                <td>HP</td>
-                                                <td>Liam Sheldon</td>
-                                                <td>$234.40</td>
-                                                <td>$200.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-success">Approved</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 2 </td>
-                                                <td>2</td>
-                                                <td>21/01/2018</td>
-                                                <td>APPLE</td>
-                                                <td>Donna Rogers</td>
-                                                <td>$234.40</td>
-                                                <td>$205.40</td>
-                                                <td class="align-center"><span class="badge badge-danger">Closed</span>
+                                                <td>{{ $ots->id }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($ots->created_at)->format('j F, Y ') }}
                                                 </td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
+                                                <td>{{ $ots->pBrand }}</td>
+                                                <td>{{ $ots->uName }}</td>
+                                                <td>&#8377 {{ $ots->price }}</td>
+                                                <td>{{ $ots->oqty }}</td>
+                                                <td>&#8377 {{ $ots->oqty * $ots->price }}</td>
+                                                <td class="align-center">
+
+                                                    @if ($ots->order_status == 1)
+                                                        <span class="badge badge-warning">Processing</span>
+                                                    @elseif ($ots->order_status == 2)
+                                                        <span class="badge badge-info">Shipped</span>
+                                                    @elseif ($ots->order_status == 3)
+                                                        <span class="badge badge-secondary">On the way</span>
+                                                    @else
+                                                        <span class="badge badge-success">Delivered</span>
+                                                    @endif
+
+                                                </td>
+                                                <td class="align-center">
+                                                    <form action="{{ url('seller/order/status/change/') }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        <select name="status" id="">
+                                                            <option value="">- Select -</option>
+                                                            <option value="2">Shiped</option>
+                                                            <option value="3">On The Way</option>
+                                                            <option value="4">Delivered</option>
+                                                        </select>
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $ots->id }}">
+                                                        <button type="submit" class="btn btn-danger"
+                                                            style="color: black">Update</button>
+                                                    </form>
+                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 3 </td>
-                                                <td>3</td>
-                                                <td>12/02/2018</td>
-                                                <td>MICROSOFT</td>
-                                                <td>Grace Roberts</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-primary">Pending</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 4 </td>
-                                                <td>4</td>
-                                                <td>12/02/2018</td>
-                                                <td>DELL</td>
-                                                <td>James Taylor</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-warning">Suspended</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 5 </td>
-                                                <td>5</td>
-                                                <td>12/02/2018</td>
-                                                <td>SAMSUNG</td>
-                                                <td>Alexander Gray</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-primary">Pending</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 6 </td>
-                                                <td>6</td>
-                                                <td>12/02/2018</td>
-                                                <td>SONY</td>
-                                                <td>Nia Hillyer</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-success">Approved</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 7 </td>
-                                                <td>7</td>
-                                                <td>12/02/2018</td>
-                                                <td>GoPro</td>
-                                                <td>Andy King</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-primary">Pending</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 8 </td>
-                                                <td>8</td>
-                                                <td>12/02/2018</td>
-                                                <td>RAYBAN</td>
-                                                <td>Laurie Fox</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-warning">Suspended</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 9 </td>
-                                                <td>9</td>
-                                                <td>12/02/2018</td>
-                                                <td>WALMART</td>
-                                                <td>Ryan McKillop</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-danger">Closed</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 10 </td>
-                                                <td>10</td>
-                                                <td>12/02/2018</td>
-                                                <td>ROLEX</td>
-                                                <td>Roxanne</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-success">Approved</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 11 </td>
-                                                <td>11</td>
-                                                <td>12/02/2018</td>
-                                                <td>LG</td>
-                                                <td>Iris Hubbard</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-warning">Suspended</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td class="checkbox-column"> 12 </td>
-                                                <td>12</td>
-                                                <td>12/02/2018</td>
-                                                <td>SHARP</td>
-                                                <td>Keith Foster</td>
-                                                <td>$234.40</td>
-                                                <td>$210.40</td>
-                                                <td class="align-center"><span
-                                                        class="badge badge-danger">Closed</span></td>
-                                                <td class="align-center"><button type="button"
-                                                        class="btn btn-default btn-sm"><i class="icon-search"></i>
-                                                        View</button></td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>

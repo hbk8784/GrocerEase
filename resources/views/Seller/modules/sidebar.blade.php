@@ -20,14 +20,14 @@
                         <a href="{{ url('/seller/dashboard') }}"> Dashboard </a>
                     </li>
                     <li>
-                        <a href="{{ url('/seller/orders') }}"> Orders </a>
+                        <a href="{{ url('/seller/orders') }}">Manage Orders </a>
                     </li>
                     <li>
-                        <a href="{{ url('/seller/products') }}"> Products </a>
+                        <a href="{{ url('/seller/products') }}"> Inventory </a>
                     </li>
 
                     <li>
-                        <a href="{{ url('/seller/add/product') }}"> Add Products </a>
+                        <a href="{{ url('/seller/add/product') }}"> Add New Products </a>
                     </li>
 
                     <li>
@@ -36,9 +36,9 @@
                     <li>
                         <a href="{{ url('/seller/view/customers') }}"> View Customers </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ url('seller/invoice') }}"> Invoice </a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ url('/logout') }}"> Logout </a>
                     </li>

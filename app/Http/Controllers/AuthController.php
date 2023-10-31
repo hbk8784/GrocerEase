@@ -168,10 +168,9 @@ class AuthController extends Controller
 
         if(session('usersInfo')){
 
-        //   $s1_orders = Orders::where('sid',session('usersInfo')['id'])->get();
-        //   dd($s1_orders);
+          $s1_orders = Orders::where('sid',session('usersInfo')['id'])->get();
 
-            return view('Seller.seller-dash');
+            return view('Seller.seller-dash', compact('s1_orders'));
          }
          else{
            return redirect('/login');

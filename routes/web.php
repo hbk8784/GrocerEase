@@ -64,12 +64,13 @@ Route::prefix('customer')->middleware('isLogin')->group(function(){
 //seller routes ---------------------------------------------------------------------------
 Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::get('/dashboard', [AuthController::class, 'sellerDash']);
-    Route::view('/orders', 'Seller.pages.order');
+    Route::get('/orders', [SellerController::class, 'orderToSeller']);
     Route::get('/products', [SellerController::class, 'showProducts']);
     Route::view('/add/product', 'Seller.pages.addProduct');
     Route::post('/add/product',[SellerController::class, 'addProducts']);
-    Route::view('/view/payment', 'Seller.pages.viewPayments');
+    Route::get('/view/payment', [SellerController::class, 'viewPayment']);
     Route::view('/view/customers', 'Seller.pages.viewCustomers');
     Route::view('/invoice', 'Seller.pages.invoice');
+    Route::post('/order/status/change', [SellerController::class, 'orderStatusUpdate']);
 });//--------------------------------------------------------------------------------------
 
