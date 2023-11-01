@@ -120,6 +120,7 @@ class RequestUserController extends Controller
            $detail->pBrand = $da['brand'];
            $detail->pMaincat = $da['maincat'];
            $detail->pSubcat = $da['subcat'];
+           $detail->uAddress = session('usersInfo')['address'];
            $detail->save();
     }
     return redirect('/customer/order/history');

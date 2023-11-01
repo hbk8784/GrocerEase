@@ -69,7 +69,7 @@ Route::prefix('/seller')->middleware('isLogin')->group(function(){
     Route::view('/add/product', 'Seller.pages.addProduct');
     Route::post('/add/product',[SellerController::class, 'addProducts']);
     Route::get('/view/payment', [SellerController::class, 'viewPayment']);
-    Route::view('/view/customers', 'Seller.pages.viewCustomers');
+    Route::get('/view/customers', [SellerController::class, 'viewCustomers']);
     Route::view('/invoice', 'Seller.pages.invoice');
     Route::post('/order/status/change', [SellerController::class, 'orderStatusUpdate']);
 });//--------------------------------------------------------------------------------------

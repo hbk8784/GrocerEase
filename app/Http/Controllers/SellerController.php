@@ -80,4 +80,10 @@ class SellerController extends Controller
         return view('Seller.pages.viewPayments', compact('viewPayment'));
 
     }
+
+    public function viewCustomers(){
+        $viewCust = Orders::where('sid', session('usersInfo')['id'])->get();
+
+        return view('Seller.pages.viewCustomers', compact('viewCust'));
+    }
 }

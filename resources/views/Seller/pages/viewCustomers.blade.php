@@ -62,25 +62,31 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="checkbox-column"> 1 </td>
-                                                <td class="">
-                                                    <a class="product-list-img" href="javascript: void(0);">
-                                                        <img src="assets/img/profile-1.jpeg" alt="product">
-                                                    </a>
-                                                </td>
-                                                <td class="customer-name-1">John Doe</td>
-                                                <td>johndoe@admin.com</td>
-                                                <td>555-555-5555</td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <div class=" align-self-center d-m-success  mr-1 data-marker">
-                                                        </div>
-                                                        <span class="label label-success">Yes</span>
-                                                    </div>
-                                                </td>
+                                            @foreach ($viewCust as $vc)
+                                                <tr>
+                                                    <td class="checkbox-column"> {{ $vc->uid }} </td>
+                                                    <td class="customer-name-1">{{ $vc->uName }}</td>
+                                                    <td class="">{{ $vc->uEmail }}
+                                                    </td>
 
-                                            </tr>
+                                                    <td>{{ $vc->uPhone }}</td>
+                                                    <td>{{ $vc->uAddress }}</td>
+                                                    <td>
+                                                        <div class="d-flex">
+                                                            <div
+                                                                class=" align-self-center d-m-success  mr-1 data-marker">
+                                                            </div>
+                                                            @if ($vc->uActive == 1)
+                                                                <span class="label label-success">Yes</span>
+                                                            @elseif ($vc->uActive == 0)
+                                                                <span class="label label-danger">No</span>
+                                                            @endif
+
+                                                        </div>
+                                                    </td>
+
+                                                </tr>
+                                            @endforeach
 
                                         </tbody>
                                     </table>

@@ -4,7 +4,7 @@
     <div class="current-page-container">
         <a class="current-page1" href="" style="color:black">Home</a>
         /
-        <a class="current-page2" href="" style="color:black">Products</a>
+        <a class="current-page2" href="" style="color:black">{{ $searchProduct[0]->maincat }}</a>
     </div>
 
 </div>
@@ -14,25 +14,19 @@
     <aside class="sidemenu-container">
         <h3>Categories</h3>
         <ul>
-            <li><a href="">All</a></li>
-            <li><a href="">Sweets</a></li>
-            <li><a href="">Snack</a></li>
-            <li><a href="">Beverages</a></li>
-            <li><a href="">Fruits & Vegetable</a></li>
-            <li><a href="">Milk & Dairies</a></li>
-            <li><a href="">Beauty & Hygiene</a></li>
-            <li><a href="">Cleaning & Household</a></li>
+            <li><a href="{{ url('products/' . $searchProduct[0]->maincat) }}">All</a></li>
+            @foreach ($uniqueSub as $sub)
+                <li><a href="">{{ $sub }}</a></li>
+            @endforeach
+
         </ul><br>
         <h3>Brand</h3>
         <select name="" id="">
             <option value="">ALL</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
-            <option value="">Random</option>
+            @foreach ($uniqueBrand as $brand)
+                <option value="">{{ $brand }}</option>
+            @endforeach
+
         </select>
         <br>
         <br>
