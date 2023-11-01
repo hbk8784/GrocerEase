@@ -59,6 +59,7 @@ class SellerController extends Controller
 
         $orderToSeller = Orders::where('sid', session('usersInfo')['id'])->get();
 
+
          return view('Seller.pages.order', compact('orderToSeller'));
     }
 

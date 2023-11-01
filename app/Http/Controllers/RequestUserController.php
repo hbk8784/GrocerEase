@@ -130,8 +130,9 @@ class RequestUserController extends Controller
 
     $re7_ordertime = DB::table('orders')
     ->select('created_at','order_status')
+    ->where('uid', session('usersInfo')['id'])
     ->groupBy('created_at','order_status')
-    ->having(DB::raw('COUNT(*)'), '>', 1)
+    ->having(DB::raw('COUNT(*)'), '>=', 1)
     ->get();
 
             return view('order-history', compact('re7_ordertime'));

@@ -147,46 +147,47 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($orderToSeller as $ots)
+                                                <tr>
+                                                    <td>{{ $ots->id }}</td>
+                                                    <td>{{ \Carbon\Carbon::parse($ots->created_at)->format('j F, Y ') }}
+                                                    </td>
+                                                    <td>{{ $ots->pBrand }}</td>
+                                                    <td>{{ $ots->uName }}</td>
+                                                    <td>&#8377 {{ $ots->price }}</td>
+                                                    <td>{{ $ots->oqty }}</td>
+                                                    <td>&#8377 {{ $ots->oqty * $ots->price }}</td>
+                                                    <td class="align-center">
+
+                                                        @if ($ots->order_status == 1)
+                                                            <span class="badge badge-warning">Processing</span>
+                                                        @elseif ($ots->order_status == 2)
+                                                            <span class="badge badge-info">Shipped</span>
+                                                        @elseif ($ots->order_status == 3)
+                                                            <span class="badge badge-secondary">On the way</span>
+                                                        @else
+                                                            <span class="badge badge-success">Delivered</span>
+                                                        @endif
+
+                                                    </td>
+                                                    <td class="align-center">
+                                                        <form action="{{ url('seller/order/status/change/') }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <select name="status" id="">
+                                                                <option value="">- Select -</option>
+                                                                <option value="2">Shiped</option>
+                                                                <option value="3">On The Way</option>
+                                                                <option value="4">Delivered</option>
+                                                            </select>
+                                                            <input type="hidden" name="id"
+                                                                value="{{ $ots->id }}">
+                                                            <button type="submit" class="btn btn-danger"
+                                                                style="color: black">Update</button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
                                             @endforeach
-                                            <tr>
-                                                <td>{{ $ots->id }}</td>
-                                                <td>{{ \Carbon\Carbon::parse($ots->created_at)->format('j F, Y ') }}
-                                                </td>
-                                                <td>{{ $ots->pBrand }}</td>
-                                                <td>{{ $ots->uName }}</td>
-                                                <td>&#8377 {{ $ots->price }}</td>
-                                                <td>{{ $ots->oqty }}</td>
-                                                <td>&#8377 {{ $ots->oqty * $ots->price }}</td>
-                                                <td class="align-center">
 
-                                                    @if ($ots->order_status == 1)
-                                                        <span class="badge badge-warning">Processing</span>
-                                                    @elseif ($ots->order_status == 2)
-                                                        <span class="badge badge-info">Shipped</span>
-                                                    @elseif ($ots->order_status == 3)
-                                                        <span class="badge badge-secondary">On the way</span>
-                                                    @else
-                                                        <span class="badge badge-success">Delivered</span>
-                                                    @endif
-
-                                                </td>
-                                                <td class="align-center">
-                                                    <form action="{{ url('seller/order/status/change/') }}"
-                                                        method="POST">
-                                                        @csrf
-                                                        <select name="status" id="">
-                                                            <option value="">- Select -</option>
-                                                            <option value="2">Shiped</option>
-                                                            <option value="3">On The Way</option>
-                                                            <option value="4">Delivered</option>
-                                                        </select>
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $ots->id }}">
-                                                        <button type="submit" class="btn btn-danger"
-                                                            style="color: black">Update</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
 
                                         </tbody>
                                     </table>

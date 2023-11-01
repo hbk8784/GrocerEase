@@ -21,7 +21,10 @@ class SearchProductController extends Controller
 
         $searchProduct = Products::where('subcat', $query)->get();
 
-         return view('products', compact('searchProduct'));
+        $uniqueSub = Products::distinct()->where('maincat',$query)->pluck('subcat');
+        $uniqueBrand = Products::distinct()->where('maincat',$query)->pluck('brand');
+
+         return view('products', compact('searchProduct', 'uniqueSub', 'uniqueBrand'));
     }
 
 }
